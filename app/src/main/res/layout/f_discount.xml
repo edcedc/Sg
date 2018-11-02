@@ -1,0 +1,121 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <data>
+
+    </data>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical">
+
+        <include layout="@layout/include_top" />
+
+        <com.lcodecore.tkrefreshlayout.TwinklingRefreshLayout
+            android:id="@+id/refreshLayout"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:background="@color/white_f4f4f4">
+
+            <android.support.v4.widget.NestedScrollView
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:fillViewport="true">
+
+                <android.support.constraint.ConstraintLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent">
+
+                    <cn.bingoogolapple.bgabanner.BGABanner
+                        android:id="@+id/banner"
+                        android:layout_width="match_parent"
+                        android:layout_height="150dp"
+                        android:scaleType="fitXY"
+                        app:banner_pageChangeDuration="2000"
+                        app:banner_pointContainerBackground="@android:color/transparent"
+                        app:banner_pointTopBottomMargin="3dp"
+                        app:banner_transitionEffect="defaultEffect" />
+
+                    <FrameLayout
+                        android:background="#55FFFFFF"
+                        app:layout_constraintBottom_toBottomOf="@id/banner"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content">
+
+                        <TextView
+                            android:id="@+id/tv_content"
+                            android:layout_width="match_parent"
+                            android:padding="@dimen/px20"
+                            style="@style/Tv15black" />
+
+                    </FrameLayout>
+
+
+
+                    <LinearLayout
+                        android:id="@+id/ly_title"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:background="@color/black_E5E5E5"
+                        android:orientation="horizontal"
+                        android:padding="@dimen/px30"
+                        app:layout_constraintTop_toBottomOf="@+id/banner">
+
+                        <TextView
+                            android:id="@+id/tv_title"
+                            style="@style/Tv15black" />
+
+                        <cn.iwgang.countdownview.CountdownView
+                            android:id="@+id/tv_time"
+                            android:layout_width="wrap_content"
+                            android:layout_height="20dp"
+                            android:layout_marginLeft="@dimen/px40"
+                            app:isShowDay="true"
+                            app:isShowHour="true"
+                            app:isShowMillisecond="false"
+                            app:isShowMinute="true"
+                            app:isShowSecond="true"
+                            app:suffixDay="天"
+                            app:suffixGravity="center"
+                            app:suffixHour="小时"
+                            app:suffixMinute="分钟"
+                            app:suffixSecond="秒"
+                            app:suffixTextColor="@color/black_3E3A39"
+                            app:suffixTextSize="@dimen/size32"
+                            app:timeTextColor="@color/reb_FE2701"
+                            app:timeTextSize="@dimen/size32" />
+
+                    </LinearLayout>
+
+                    <android.support.v7.widget.RecyclerView
+                        android:id="@+id/recyclerView"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_margin="@dimen/px20"
+                        android:background="@color/white"
+                        android:nestedScrollingEnabled="false"
+                        android:overScrollMode="never"
+                        app:layout_constraintLeft_toLeftOf="parent"
+                        app:layout_constraintRight_toRightOf="parent"
+                        app:layout_constraintTop_toBottomOf="@+id/ly_title" />
+
+                </android.support.constraint.ConstraintLayout>
+
+            </android.support.v4.widget.NestedScrollView>
+
+        </com.lcodecore.tkrefreshlayout.TwinklingRefreshLayout>
+
+        <com.ganxin.library.LoadDataLayout
+            android:id="@+id/swipeLoadDataLayout"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+
+
+        </com.ganxin.library.LoadDataLayout>
+
+    </LinearLayout>
+
+</layout>

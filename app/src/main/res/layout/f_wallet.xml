@@ -1,0 +1,70 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <data>
+
+    </data>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@color/white"
+        android:orientation="vertical">
+
+        <include layout="@layout/include_top"/>
+
+        <FrameLayout
+            android:background="@color/white_f4f4f4"
+            android:layout_width="match_parent"
+            android:paddingRight="@dimen/px20"
+            android:paddingLeft="@dimen/px20"
+            android:paddingTop="@dimen/px10"
+            android:paddingBottom="@dimen/px20"
+            android:layout_height="wrap_content">
+
+            <com.flyco.roundview.RoundLinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:gravity="center"
+                android:orientation="vertical"
+                app:rv_cornerRadius="@dimen/px10"
+                app:rv_backgroundColor="@color/white">
+
+                <TextView
+                    android:id="@+id/tv_title"
+                    android:layout_marginTop="@dimen/px20"
+                    style="@style/Tv15black"/>
+
+                <TextView
+                    android:id="@+id/tv_price"
+                    android:layout_marginTop="@dimen/px30"
+                    android:textSize="@dimen/size40"
+                    style="@style/Tv15Reb"/>
+
+                <com.flyco.roundview.RoundTextView
+                    android:id="@+id/tv_forward"
+                    android:gravity="center"
+                    android:layout_marginTop="@dimen/px40"
+                    android:padding="@dimen/px20"
+                    android:layout_width="match_parent"
+                    android:text="@string/put_forward"
+                    style="@style/Tv15black"
+                    app:rv_backgroundColor="@color/black_E5E5E5"
+                    app:rv_cornerRadius_BR="@dimen/px10"
+                    app:rv_cornerRadius_BL="@dimen/px10"/>
+
+            </com.flyco.roundview.RoundLinearLayout>
+
+        </FrameLayout>
+
+        <android.support.v7.widget.RecyclerView
+            android:id="@+id/recyclerView"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:overScrollMode="never" />
+
+    </LinearLayout>
+
+
+</layout>

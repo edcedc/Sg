@@ -1,0 +1,141 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <data>
+
+    </data>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical">
+
+        <include layout="@layout/include_top"/>
+
+        <android.support.v4.widget.NestedScrollView
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_weight="1">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:orientation="vertical">
+
+                <android.support.constraint.ConstraintLayout
+                    android:id="@+id/ly_address"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:background="@color/white_f4f4f4"
+                    app:layout_constraintTop_toBottomOf="@+id/constraintLayout">
+
+                    <TextView
+                        android:id="@+id/tv_address_tips"
+                        android:layout_marginLeft="@dimen/px20"
+                        app:layout_constraintTop_toBottomOf="@+id/iv_address"
+                        app:layout_constraintBottom_toTopOf="@+id/iv_address"
+                        app:layout_constraintLeft_toRightOf="@+id/iv_address"
+                        android:text="请设置默认地址"
+                        style="@style/Tv15black" />
+
+                    <ImageView
+                        android:id="@+id/iv_address"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_margin="@dimen/px20"
+                        android:background="@mipmap/home_icon_address"
+                        app:layout_constraintBottom_toBottomOf="parent"
+                        app:layout_constraintLeft_toLeftOf="parent"
+                        app:layout_constraintTop_toTopOf="parent" />
+
+                    <TextView
+                        android:id="@+id/tv_user"
+                        style="@style/Tv15black"
+                        android:layout_width="0dp"
+                        android:layout_marginLeft="@dimen/px20"
+                        android:layout_marginTop="@dimen/px25"
+                        app:layout_constraintBottom_toTopOf="@+id/tv_address"
+                        app:layout_constraintLeft_toRightOf="@+id/iv_address"
+                        app:layout_constraintTop_toTopOf="parent" />
+
+                    <TextView
+                        android:id="@+id/tv_address"
+                        style="@style/Tv12black"
+                        android:layout_marginLeft="@dimen/px20"
+                        android:layout_marginTop="@dimen/px30"
+                        app:layout_constraintBottom_toTopOf="@+id/iv_view"
+                        app:layout_constraintLeft_toRightOf="@+id/iv_address"
+                        app:layout_constraintTop_toBottomOf="@+id/tv_user" />
+
+
+                    <ImageView
+                        android:id="@+id/iv_close"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginRight="@dimen/px20"
+                        android:background="@mipmap/my_icon_return"
+                        android:visibility="invisible"
+                        app:layout_constraintBottom_toBottomOf="parent"
+                        app:layout_constraintRight_toRightOf="parent"
+                        app:layout_constraintTop_toTopOf="parent" />
+
+
+                    <ImageView
+                        android:id="@+id/iv_view"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="@dimen/px30"
+                        android:background="@mipmap/home_bg3"
+                        app:layout_constraintTop_toBottomOf="@+id/tv_address" />
+
+                </android.support.constraint.ConstraintLayout>
+
+                <android.support.v7.widget.RecyclerView
+                    android:id="@+id/recyclerView"
+                    app:layout_constraintTop_toBottomOf="@+id/iv_view"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:nestedScrollingEnabled="false"
+                    android:overScrollMode="never" />
+            </LinearLayout>
+
+
+        </android.support.v4.widget.NestedScrollView>
+
+        <LinearLayout
+            android:background="@color/white"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal">
+
+            <TextView
+                android:layout_marginLeft="@dimen/px20"
+                android:text="@string/total"
+                style="@style/Tv12black" />
+
+            <TextView
+                android:layout_marginLeft="@dimen/px10"
+                android:id="@+id/tv_price"
+                android:textSize="@dimen/size28"
+                android:textColor="@color/reb_FE2701"
+                style="@style/Tv15black" />
+
+            <View
+                android:layout_weight="1"
+                android:layout_width="0dp"
+                android:layout_height="0.1dp"/>
+
+            <TextView
+                android:background="@color/reb_FE2701"
+                android:id="@+id/tv_confirm"
+                android:padding="@dimen/px20"
+                android:textColor="@color/white"
+                android:text="@string/immediate_payment"
+                style="@style/Tv15black" />
+
+        </LinearLayout>
+
+    </LinearLayout>
+
+</layout>

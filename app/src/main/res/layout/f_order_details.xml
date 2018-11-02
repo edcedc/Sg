@@ -1,0 +1,401 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <data>
+
+    </data>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@color/white_f4f4f4"
+        android:orientation="vertical">
+
+        <include layout="@layout/include_top" />
+
+        <android.support.v4.widget.NestedScrollView
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_weight="1"
+            android:fillViewport="true">
+
+            <android.support.constraint.ConstraintLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent">
+
+                <android.support.constraint.ConstraintLayout
+                    android:id="@+id/constraintLayout"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:background="@color/black_E5E5E5"
+                    android:padding="@dimen/px20">
+
+                    <TextView
+                        android:id="@+id/tv_state"
+                        style="@style/Tv15black" />
+
+                    <TextView
+                        android:visibility="gone"
+                        android:text="xxxxxxx"
+                        app:layout_constraintRight_toRightOf="parent"
+                        android:id="@+id/tv_state2"
+                        style="@style/Tv15black" />
+
+                    <TextView
+                        android:id="@+id/tv_text"
+                        style="@style/Tv15black"
+                        android:text="还有"
+                        app:layout_constraintTop_toBottomOf="@+id/tv_state" />
+
+                    <cn.iwgang.countdownview.CountdownView
+                        android:id="@+id/tv_time"
+                        android:layout_width="wrap_content"
+                        android:layout_height="20dp"
+                        android:layout_marginLeft="@dimen/px20"
+                        app:isShowDay="true"
+                        app:isShowHour="true"
+                        app:isShowMillisecond="false"
+                        app:isShowMinute="true"
+                        app:isShowSecond="true"
+                        app:layout_constraintLeft_toRightOf="@+id/tv_text"
+                        app:layout_constraintTop_toBottomOf="@+id/tv_state"
+                        app:suffixDay="天"
+                        app:suffixGravity="center"
+                        app:suffixHour="小时"
+                        app:suffixMinute="分钟"
+                        app:suffixSecond="秒"
+                        app:suffixTextColor="@color/black_3E3A39"
+                        app:suffixTextSize="@dimen/size32"
+                        app:timeTextColor="@color/reb_FE2701"
+                        app:timeTextSize="@dimen/size32" />
+
+                    <TextView
+                        android:id="@+id/tv_text1"
+                        style="@style/Tv15black"
+                        android:text="自动关闭订单  "
+                        app:layout_constraintLeft_toRightOf="@+id/tv_time"
+                        app:layout_constraintTop_toBottomOf="@+id/tv_state" />
+
+                    <android.support.constraint.Group
+                        android:id="@+id/gp_title_time"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:visibility="gone"
+                        app:constraint_referenced_ids="tv_text, tv_time, tv_text1" />
+
+                </android.support.constraint.ConstraintLayout>
+
+                <android.support.constraint.ConstraintLayout
+                    android:id="@+id/constraintLayout1"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:background="@color/white_f4f4f4"
+                    app:layout_constraintTop_toBottomOf="@+id/constraintLayout">
+
+                    <ImageView
+                        android:id="@+id/iv_address"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_margin="@dimen/px20"
+                        android:background="@mipmap/home_icon_address"
+                        app:layout_constraintBottom_toBottomOf="parent"
+                        app:layout_constraintLeft_toLeftOf="parent"
+                        app:layout_constraintTop_toTopOf="parent" />
+
+                    <TextView
+                        android:id="@+id/tv_user"
+                        style="@style/Tv15black"
+                        android:layout_width="0dp"
+                        android:layout_marginLeft="@dimen/px20"
+                        android:layout_marginTop="@dimen/px25"
+                        app:layout_constraintBottom_toTopOf="@+id/tv_address"
+                        app:layout_constraintLeft_toRightOf="@+id/iv_address"
+                        app:layout_constraintTop_toTopOf="parent" />
+
+                    <TextView
+                        android:id="@+id/tv_address"
+                        style="@style/Tv12black"
+                        android:layout_marginLeft="@dimen/px20"
+                        android:layout_marginTop="@dimen/px20"
+                        app:layout_constraintBottom_toTopOf="@+id/iv_view"
+                        app:layout_constraintLeft_toRightOf="@+id/iv_address"
+                        app:layout_constraintTop_toBottomOf="@+id/tv_user" />
+
+
+                    <ImageView
+                        android:id="@+id/iv_close"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginRight="@dimen/px20"
+                        android:background="@mipmap/my_icon_return"
+                        android:visibility="invisible"
+                        app:layout_constraintBottom_toBottomOf="parent"
+                        app:layout_constraintRight_toRightOf="parent"
+                        app:layout_constraintTop_toTopOf="parent" />
+
+
+                    <ImageView
+                        android:id="@+id/iv_view"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="@dimen/px30"
+                        android:background="@mipmap/home_bg3"
+                        app:layout_constraintTop_toBottomOf="@+id/tv_address" />
+
+                </android.support.constraint.ConstraintLayout>
+
+                <android.support.constraint.ConstraintLayout
+                    android:id="@+id/constraintLayout2"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:background="@color/white"
+                    android:padding="@dimen/px40"
+                    app:layout_constraintTop_toBottomOf="@+id/constraintLayout1">
+
+                    <TextView
+                        android:id="@+id/tv_collage_title"
+                        style="@style/Tv15black"
+                        app:layout_constraintLeft_toLeftOf="parent"
+                        app:layout_constraintRight_toRightOf="parent" />
+
+                    <com.fanwang.sg.weight.WithScrollGridView
+                        android:id="@+id/gv_collage"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:numColumns="3"
+                        app:layout_constraintTop_toBottomOf="@+id/tv_collage_title" />
+
+                    <LinearLayout
+                        android:id="@+id/linearlayout"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:orientation="horizontal"
+                        app:layout_constraintLeft_toLeftOf="parent"
+                        app:layout_constraintRight_toRightOf="parent"
+                        app:layout_constraintTop_toBottomOf="@+id/gv_collage">
+
+                        <TextView
+                            android:id="@+id/tv_collage_time"
+                            style="@style/Tv15black"
+                            android:text="xxxxxxx"
+                            android:textStyle="bold" />
+
+                        <cn.iwgang.countdownview.CountdownView
+                            android:id="@+id/tv_collage_time2"
+                            android:layout_width="wrap_content"
+                            android:layout_height="20dp"
+                            android:layout_marginLeft="@dimen/px20"
+                            app:isShowDay="true"
+                            app:isShowHour="true"
+                            app:isShowMillisecond="false"
+                            app:isShowMinute="true"
+                            app:isShowSecond="true"
+                            app:suffixDay="："
+                            app:suffixGravity="center"
+                            app:suffixHour="："
+                            app:suffixMinute="："
+                            app:suffixTextColor="@color/reb_FE2701"
+                            app:suffixTextSize="@dimen/size32"
+                            app:timeTextColor="@color/reb_FE2701"
+                            app:timeTextSize="@dimen/size32" />
+
+                    </LinearLayout>
+
+                    <TextView
+                        android:id="@+id/tv_collage_rule"
+                        style="@style/Tv12black"
+                        android:layout_marginTop="@dimen/px10"
+                        android:text="@string/collage_rule"
+                        android:textColor="@color/black_898989"
+                        app:layout_constraintLeft_toLeftOf="parent"
+                        app:layout_constraintRight_toRightOf="parent"
+                        app:layout_constraintTop_toBottomOf="@+id/linearlayout" />
+
+                    <android.support.constraint.Group
+                        android:id="@+id/gp_collage_rule"
+                        app:constraint_referenced_ids="linearlayout, tv_collage_rule"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content" />
+
+                </android.support.constraint.ConstraintLayout>
+
+                <View
+                    android:id="@+id/view4"
+                    android:layout_width="match_parent"
+                    android:layout_height="@dimen/px10"
+                    android:background="@color/white_f4f4f4"
+                    app:layout_constraintTop_toBottomOf="@+id/constraintLayout2" />
+
+                <android.support.constraint.Group
+                    android:id="@+id/gp_collage"
+                    android:visibility="gone"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    app:constraint_referenced_ids="constraintLayout2, view4" />
+
+                <android.support.v7.widget.RecyclerView
+                    android:id="@+id/recyclerView"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:background="@color/white"
+                    android:nestedScrollingEnabled="false"
+                    android:overScrollMode="never"
+                    app:layout_constraintTop_toBottomOf="@+id/view4" />
+
+                <View
+                    android:id="@+id/view"
+                    android:layout_width="match_parent"
+                    android:layout_height="@dimen/px10"
+                    android:background="@color/white_f4f4f4"
+                    app:layout_constraintTop_toBottomOf="@+id/recyclerView" />
+
+                <TextView
+                    android:id="@+id/tv_price"
+                    style="@style/Tv15black"
+                    android:layout_width="match_parent"
+                    android:background="@color/white"
+                    android:gravity="right"
+                    android:padding="@dimen/px20"
+                    app:layout_constraintTop_toBottomOf="@+id/view" />
+
+                <View
+                    android:id="@+id/view1"
+                    android:layout_width="match_parent"
+                    android:layout_height="@dimen/px10"
+                    android:background="@color/white_f4f4f4"
+                    app:layout_constraintTop_toBottomOf="@+id/tv_price" />
+
+                <LinearLayout
+                    android:id="@+id/ly_online"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:background="@color/white"
+                    android:gravity="center"
+                    android:orientation="horizontal"
+                    android:padding="@dimen/px20"
+                    app:layout_constraintTop_toBottomOf="@+id/view1">
+
+                    <ImageView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:background="@mipmap/home_btn_customerservice" />
+
+                    <TextView
+                        style="@style/Tv15black"
+                        android:layout_marginLeft="@dimen/px20"
+                        android:gravity="right"
+                        android:text="@string/online_service" />
+
+                </LinearLayout>
+
+                <View
+                    android:id="@+id/view2"
+                    android:layout_width="match_parent"
+                    android:layout_height="@dimen/px10"
+                    android:background="@color/white_f4f4f4"
+                    app:layout_constraintTop_toBottomOf="@+id/ly_online" />
+
+                <TextView
+                    android:id="@+id/tv_details"
+                    style="@style/Tv12black"
+                    android:lineSpacingExtra="@dimen/px5"
+                    android:layout_width="match_parent"
+                    android:background="@color/white"
+                    android:padding="@dimen/px20"
+                    android:textColor="@color/black_A1A1A1"
+                    app:layout_constraintTop_toBottomOf="@+id/view2" />
+
+                <View
+                    android:id="@+id/view3"
+                    android:layout_width="match_parent"
+                    android:layout_height="@dimen/px10"
+                    android:background="@color/white_f4f4f4"
+                    app:layout_constraintTop_toBottomOf="@+id/tv_details" />
+
+                <LinearLayout
+                    android:id="@+id/constraintLayout3"
+                    android:visibility="gone"
+                    android:gravity="right"
+                    android:background="@color/white"
+                    android:padding="@dimen/px20"
+                    app:layout_constraintTop_toBottomOf="@+id/view3"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal">
+
+                    <com.flyco.roundview.RoundTextView
+                        android:id="@+id/bt_submit2"
+                        style="@style/Tv12Reb"
+                        android:layout_marginRight="@dimen/px40"
+                        android:minEms="6"
+                        android:visibility="gone"
+                        android:gravity="center"
+                        android:padding="@dimen/px10"
+                        android:textColor="@color/black_898989"
+                        app:rv_cornerRadius="@dimen/px30"
+                        app:rv_strokeWidth="@dimen/px2"
+                        app:rv_strokeColor="@color/black_898989"
+                        android:text="xxxxx"/>
+
+                    <com.flyco.roundview.RoundTextView
+                        android:id="@+id/bt_submit1"
+                        style="@style/Tv12Reb"
+                        android:minEms="6"
+                        android:text="xxxx"
+                        android:visibility="gone"
+                        android:gravity="center"
+                        android:padding="@dimen/px10"
+                        android:textColor="@color/reb_FE2701"
+                        app:rv_cornerRadius="@dimen/px30"
+                        app:rv_strokeColor="@color/reb_FE2701"
+                        app:rv_strokeWidth="@dimen/px2" />
+
+                </LinearLayout>
+
+                <com.flyco.roundview.RoundLinearLayout
+                    android:id="@+id/ly_reason"
+                    android:visibility="gone"
+                    app:layout_constraintTop_toBottomOf="@id/constraintLayout3"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical"
+                    android:layout_margin="@dimen/px20"
+                    app:rv_cornerRadius="@dimen/px10"
+                    app:rv_backgroundColor="@color/white">
+
+                    <TextView
+                        android:layout_margin="@dimen/px20"
+                        android:layout_gravity="center"
+                        android:text="@string/reason"
+                        style="@style/Tv15black" />
+
+                    <View
+                        style="@style/divider_1"/>
+
+                    <TextView
+                        android:id="@+id/tv_reason"
+                        android:minLines="5"
+                        android:layout_margin="@dimen/px20"
+                        android:text="@string/reason"
+                        style="@style/Tv15black" />
+
+                </com.flyco.roundview.RoundLinearLayout>
+
+            </android.support.constraint.ConstraintLayout>
+
+        </android.support.v4.widget.NestedScrollView>
+
+        <com.flyco.roundview.RoundTextView
+            android:id="@+id/tv_confirm"
+            style="@style/RoundBlueTextView"
+            android:layout_marginBottom="@dimen/px40"
+            android:layout_marginTop="@dimen/px20"
+            android:text="@string/collage_rule2"
+            android:visibility="gone"
+            app:rv_backgroundColor="@color/reb_FE2701"
+            app:rv_backgroundPressColor="@color/reb_C91E00" />
+
+    </LinearLayout>
+
+</layout>

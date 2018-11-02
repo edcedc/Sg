@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <data>
+
+    </data>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@color/white"
+        android:orientation="vertical">
+
+        <include layout="@layout/include_top"/>
+
+        <android.support.constraint.ConstraintLayout
+            android:paddingLeft="@dimen/px20"
+            android:paddingRight="@dimen/px20"
+            android:paddingTop="@dimen/px30"
+            android:paddingBottom="@dimen/px30"
+            android:layout_height="wrap_content"
+            android:layout_width="match_parent">
+
+            <TextView
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintBottom_toBottomOf="parent"
+                android:id="@+id/tv_title"
+                style="@style/Tv15black" />
+
+            <TextView
+                android:id="@+id/tv_time"
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                android:textColor="@color/black_A1A1A1"
+                style="@style/Tv12black" />
+
+        </android.support.constraint.ConstraintLayout>
+
+        <View
+            style="@style/divider_1"/>
+
+        <TextView
+            android:layout_margin="@dimen/px20"
+            android:text="xxxxxx"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintBottom_toBottomOf="parent"
+            android:id="@+id/tv_content"
+            style="@style/Tv15black" />
+
+    </LinearLayout>
+
+</layout>

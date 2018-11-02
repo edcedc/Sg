@@ -1,0 +1,188 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+
+    </data>
+
+    <LinearLayout
+
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:id="@+id/top_layout"
+            android:layout_height="wrap_content"
+            android:background="@color/white"
+            android:orientation="vertical">
+
+            <com.yanzhenjie.sofia.StatusView
+                android:id="@+id/status_view"
+                android:background="@color/white_f4f4f4"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"/>
+
+            <android.support.v7.widget.Toolbar
+                android:id="@+id/toolbar"
+                android:layout_width="match_parent"
+                android:layout_height="?actionBarSize"
+                android:layout_gravity="top"
+                android:background="@color/white"
+                android:theme="@style/AppTheme.AppBarLight"
+                app:popupTheme="@style/AppTheme.Popup"
+                app:subtitleTextColor="@color/black_3E3A39"
+                app:titleTextColor="@color/black_3E3A39">
+
+                <TextView
+                    android:id="@+id/top_title"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="我的"
+                    android:layout_gravity="center"
+                    android:textColor="@color/black_3E3A39"
+                    android:textSize="19sp" />
+
+                <com.fanwang.sg.weight.MessageView
+                    android:id="@+id/messageView"
+                    android:layout_gravity="right"
+                    android:layout_marginRight="@dimen/px20"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"/>
+
+            </android.support.v7.widget.Toolbar>
+
+            <View
+                style="@style/divider_dropshadow"
+                android:id="@+id/top_view"/>
+
+        </LinearLayout>
+
+
+
+        <com.lcodecore.tkrefreshlayout.TwinklingRefreshLayout
+            android:id="@+id/refreshLayout"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:background="@color/white_f4f4f4">
+
+            <android.support.v4.widget.NestedScrollView
+                android:layout_width="match_parent"
+                android:layout_height="match_parent">
+
+                <android.support.constraint.ConstraintLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent">
+
+                    <LinearLayout
+                        android:id="@+id/ly_head"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:background="@color/white"
+                        android:gravity="center|left"
+                        android:orientation="horizontal">
+
+                        <com.fanwang.sg.weight.CircleImageView
+                            android:id="@+id/iv_head"
+                            style="@style/user_head"
+                            android:layout_margin="@dimen/px30" />
+
+                        <TextView
+                            android:drawablePadding="@dimen/px20"
+                            android:id="@+id/tv_name"
+                            style="@style/Tv15black"
+                            android:text="@string/login_register" />
+
+                    </LinearLayout>
+
+                    <View
+                        android:id="@+id/view"
+                        style="@style/divider_1"
+                        android:layout_height="@dimen/px5"
+                        app:layout_constraintTop_toBottomOf="@+id/ly_head" />
+
+                    <LinearLayout
+                        android:id="@+id/ly_order"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:background="@color/white"
+                        android:gravity="center"
+                        android:orientation="horizontal"
+                        android:padding="@dimen/px30"
+                        app:layout_constraintTop_toBottomOf="@+id/view">
+
+                        <TextView
+                            style="@style/Tv15black"
+                            android:layout_weight="1"
+                            android:text="@string/my_order" />
+
+                        <TextView
+                            android:id="@+id/tv_view_orders"
+                            style="@style/Tv15black"
+                            android:paddingRight="@dimen/px30"
+                            android:text="@string/view_orders"
+                            android:textColor="@color/black_898989" />
+
+                        <ImageView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:background="@mipmap/my_icon_return" />
+
+                    </LinearLayout>
+
+                    <View
+                        android:id="@+id/view2"
+                        style="@style/divider_1"
+                        android:layout_height="@dimen/px5"
+                        app:layout_constraintTop_toBottomOf="@+id/ly_order" />
+
+                    <com.fanwang.sg.weight.WithScrollGridView
+                        android:id="@+id/gridView1"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:background="@color/white"
+                        android:numColumns="4"
+                        app:layout_constraintTop_toBottomOf="@+id/view2" />
+
+                    <View
+                        android:id="@+id/view1"
+                        style="@style/divider_1"
+                        app:layout_constraintTop_toBottomOf="@+id/gridView1" />
+
+                    <com.fanwang.sg.weight.WithScrollGridView
+                        android:id="@+id/gridView2"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:background="@color/white"
+                        android:numColumns="4"
+                        app:layout_constraintTop_toBottomOf="@+id/view1" />
+
+                    <View
+                        android:id="@+id/view3"
+                        style="@style/divider_1"
+                        android:layout_height="@dimen/px10"
+                        android:background="#F7F8F8"
+                        app:layout_constraintTop_toBottomOf="@+id/gridView2" />
+
+                    <android.support.v7.widget.RecyclerView
+                        android:id="@+id/listView"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:background="@color/white"
+                        android:nestedScrollingEnabled="false"
+                        android:overScrollMode="never"
+                        app:layout_constraintTop_toBottomOf="@+id/view3" />
+
+                </android.support.constraint.ConstraintLayout>
+
+            </android.support.v4.widget.NestedScrollView>
+
+        </com.lcodecore.tkrefreshlayout.TwinklingRefreshLayout>
+
+    </LinearLayout>
+
+
+</layout>

@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.constraint.ConstraintLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="wrap_content"
+    android:background="@color/black_A1A1A1"
+    android:id="@+id/cl_add"
+    android:layout_height="wrap_content">
+
+    <com.flyco.roundview.RoundLinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        app:rv_strokeWidth="@dimen/px2"
+        app:rv_strokeColor="#999999">
+
+        <TextView
+            android:id="@+id/rf_left"
+            style="@style/Tv12black"
+            android:background="#FAFAFA"
+            android:ems="2"
+            android:gravity="center"
+            android:padding="@dimen/px10"
+            android:text="—"
+            android:textColor="#A1A1A1" />
+
+        <EditText
+            android:id="@+id/et_number"
+            style="@style/Tv12black"
+            android:focusable="false"
+            android:background="#EEEEEE"
+            android:minEms="2"
+            android:inputType="number"
+            android:gravity="center"
+            android:padding="@dimen/px10"
+            android:text="1" />
+
+        <TextView
+            android:id="@+id/rf_right"
+            style="@style/Tv12black"
+            android:background="#EEEEEE"
+            android:ems="2"
+            android:gravity="center"
+            android:padding="@dimen/px10"
+            android:text="+"
+            android:textColor="#A1A1A1" />
+
+    </com.flyco.roundview.RoundLinearLayout>
+
+</android.support.constraint.ConstraintLayout>

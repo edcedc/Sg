@@ -1,0 +1,121 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <data>
+
+    </data>
+
+    <com.ganxin.library.LoadDataLayout
+        android:id="@+id/swipeLoadDataLayout"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@color/white_f4f4f4"
+            android:orientation="vertical">
+
+            <com.yanzhenjie.sofia.StatusView
+                android:id="@+id/status_view"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content" />
+
+            <include layout="@layout/include_search" />
+
+            <com.lcodecore.tkrefreshlayout.TwinklingRefreshLayout
+                android:id="@+id/refreshLayout"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:fitsSystemWindows="true">
+
+                <android.support.v4.widget.NestedScrollView
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:fillViewport="true">
+
+                    <android.support.constraint.ConstraintLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent">
+
+                        <cn.bingoogolapple.bgabanner.BGABanner
+                            android:id="@+id/banner"
+                            android:value=""
+                            android:layout_width="match_parent"
+                            android:layout_height="200dp"
+                            android:scaleType="fitXY"
+                            app:banner_pageChangeDuration="2000"
+                            app:banner_pointContainerBackground="@android:color/transparent"
+                            app:banner_pointTopBottomMargin="3dp"
+                            app:banner_transitionEffect="defaultEffect" />
+
+                        <android.support.v7.widget.RecyclerView
+                            android:id="@+id/recyclerView"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:background="@color/white"
+                            android:nestedScrollingEnabled="false"
+                            android:overScrollMode="never"
+                            app:layout_constraintTop_toBottomOf="@+id/banner" />
+
+                        <cn.bingoogolapple.bgabanner.BGABanner
+                            app:layout_constraintTop_toBottomOf="@+id/recyclerView"
+                            android:id="@+id/banner_manzeng"
+                            android:visibility="gone"
+                            android:layout_width="match_parent"
+                            android:layout_height="170dp"
+                            android:scaleType="fitXY"
+                            app:banner_pageChangeDuration="2000"
+                            app:banner_pointContainerBackground="@android:color/transparent"
+                            app:banner_pointTopBottomMargin="3dp"
+                            app:banner_transitionEffect="defaultEffect" />
+
+                        <com.fanwang.sg.weight.WithScrollGridView
+                            android:id="@+id/gv_manzeng"
+                            app:layout_constraintTop_toBottomOf="@+id/banner_manzeng"
+                            android:layout_marginTop="@dimen/px10"
+                            android:layout_marginLeft="@dimen/px30"
+                            android:layout_marginRight="@dimen/px30"
+                            android:horizontalSpacing="@dimen/px10"
+                            android:verticalSpacing="@dimen/px10"
+                            android:numColumns="4"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"/>
+
+                        <cn.bingoogolapple.bgabanner.BGABanner
+                            app:layout_constraintTop_toBottomOf="@+id/gv_manzeng"
+                            android:id="@+id/banner_manjian"
+                            android:visibility="gone"
+                            android:layout_width="match_parent"
+                            android:layout_height="170dp"
+                            android:scaleType="fitXY"
+                            app:banner_pageChangeDuration="2000"
+                            app:banner_pointContainerBackground="@android:color/transparent"
+                            app:banner_pointTopBottomMargin="3dp"
+                            app:banner_transitionEffect="defaultEffect" />
+
+                        <com.fanwang.sg.weight.WithScrollGridView
+                            android:id="@+id/gv_manjian"
+                            app:layout_constraintTop_toBottomOf="@+id/banner_manjian"
+                            android:layout_marginTop="@dimen/px10"
+                            android:layout_marginLeft="@dimen/px30"
+                            android:layout_marginRight="@dimen/px30"
+                            android:horizontalSpacing="@dimen/px10"
+                            android:verticalSpacing="@dimen/px10"
+                            android:numColumns="4"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"/>
+
+                    </android.support.constraint.ConstraintLayout>
+
+                </android.support.v4.widget.NestedScrollView>
+
+
+            </com.lcodecore.tkrefreshlayout.TwinklingRefreshLayout>
+
+        </LinearLayout>
+
+    </com.ganxin.library.LoadDataLayout>
+
+</layout>

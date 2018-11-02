@@ -1,0 +1,404 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <data>
+
+    </data>
+
+    <FrameLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical">
+
+            <android.support.v4.widget.NestedScrollView
+                android:id="@+id/scrollView"
+                android:layout_width="match_parent"
+                android:layout_height="0dp"
+                android:layout_weight="1"
+                android:orientation="vertical">
+
+                <android.support.constraint.ConstraintLayout
+                    android:id="@+id/layout"
+                    android:background="@color/white"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent">
+
+                    <cn.bingoogolapple.bgabanner.BGABanner
+                        android:id="@+id/banner"
+                        android:layout_width="match_parent"
+                        android:layout_height="200dp"
+                        android:scaleType="fitXY"
+                        app:banner_pageChangeDuration="2000"
+                        app:banner_pointContainerBackground="@android:color/transparent"
+                        app:banner_pointDrawable="@drawable/selector_banner_point"
+                        app:banner_pointTopBottomMargin="3dp"
+                        app:banner_transitionEffect="defaultEffect" />
+
+                    <LinearLayout
+                        android:id="@+id/linearlayout"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:gravity="center"
+                        android:orientation="horizontal"
+                        app:layout_constraintTop_toBottomOf="@+id/banner">
+
+                        <TextView
+                            android:id="@+id/tv_price"
+                            style="@style/Tv15black"
+                            android:layout_margin="@dimen/px20"
+                            android:textColor="@color/white"
+                            android:textSize="@dimen/size36" />
+
+                        <com.fanwang.sg.weight.StrikethroughTextView
+                            android:id="@+id/tv_price2"
+                            style="@style/Tv12black" />
+
+                        <com.flyco.roundview.RoundTextView
+                            android:id="@+id/tv_user_number"
+                            style="@style/Tv12black"
+                            android:visibility="gone"
+                            android:layout_marginLeft="@dimen/px20"
+                            android:gravity="center"
+                            android:paddingLeft="@dimen/px10"
+                            android:paddingRight="@dimen/px10"
+                            android:textColor="@color/white"
+                            app:rv_backgroundColor="@color/blue_0700C5"
+                            app:rv_cornerRadius="@dimen/px10" />
+
+                        <com.flyco.roundview.RoundTextView
+                            android:id="@+id/tv_discount"
+                            style="@style/Tv12Reb"
+                            android:visibility="gone"
+                            android:layout_marginLeft="@dimen/px20"
+                            android:paddingLeft="@dimen/px10"
+                            android:paddingRight="@dimen/px10"
+                            android:textColor="@color/reb_FE2701"
+                            android:textSize="@dimen/size16"
+                            app:rv_strokeColor="@color/reb_FE2701"
+                            app:rv_strokeWidth="@dimen/px2" />
+
+                        <com.flyco.roundview.RoundTextView
+                            android:id="@+id/tv_discount_state"
+                            style="@style/Tv12Reb"
+                            android:visibility="gone"
+                            android:layout_marginLeft="@dimen/px20"
+                            android:paddingLeft="@dimen/px10"
+                            android:paddingRight="@dimen/px10"
+                            android:textColor="@color/reb_FE2701"
+                            android:textSize="@dimen/size16"
+                            app:rv_strokeColor="@color/reb_FE2701"
+                            app:rv_strokeWidth="@dimen/px2" />
+
+                        <com.flyco.roundview.RoundTextView
+                            android:id="@+id/tv_credited"
+                            android:visibility="gone"
+                            style="@style/Tv12Reb"
+                            android:text="积分"
+                            android:layout_marginLeft="@dimen/px20"
+                            android:paddingLeft="@dimen/px10"
+                            android:paddingRight="@dimen/px10"
+                            android:textColor="@color/reb_FE2701"
+                            android:textSize="@dimen/size16"
+                            app:rv_strokeColor="@color/reb_FE2701"
+                            app:rv_strokeWidth="@dimen/px2" />
+
+                        <com.flyco.roundview.RoundTextView
+                            android:id="@+id/tv_special"
+                            style="@style/Tv12Reb"
+                            android:visibility="gone"
+                            android:layout_marginLeft="@dimen/px20"
+                            android:paddingLeft="@dimen/px10"
+                            android:paddingRight="@dimen/px10"
+                            android:text="特卖"
+                            android:textColor="@color/blue_0700C5"
+                            android:textSize="@dimen/size16"
+                            app:rv_strokeColor="@color/blue_0700C5"
+                            app:rv_strokeWidth="@dimen/px2" />
+
+                        <View
+                            android:layout_width="0.1dp"
+                            android:layout_height="0.1dp"
+                            android:layout_weight="1" />
+
+                        <LinearLayout
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginRight="@dimen/px20"
+                            android:orientation="vertical">
+
+                            <TextView
+                                android:id="@+id/tv_time_title"
+                                style="@style/Tv12black"
+                                android:textColor="@color/white" />
+
+                            <cn.iwgang.countdownview.CountdownView
+                                android:id="@+id/tv_time"
+                                android:layout_width="wrap_content"
+                                android:layout_height="20dp"
+                                android:visibility="gone"
+                                app:isShowDay="true"
+                                app:isShowHour="true"
+                                app:isShowMillisecond="false"
+                                app:isShowMinute="true"
+                                app:isShowSecond="true"
+                                app:suffixDay="天"
+                                app:suffixGravity="center"
+                                app:suffixHour=":"
+                                app:suffixMinute=":"
+                                app:suffixSecond=""
+                                app:suffixTextColor="@color/white"
+                                app:suffixTextSize="@dimen/size24"
+                                app:timeTextColor="@color/white"
+                                app:timeTextSize="@dimen/size24" />
+
+                        </LinearLayout>
+
+                    </LinearLayout>
+
+                    <TextView
+                        android:id="@+id/tv_title"
+                        style="@style/Tv15black"
+                        android:ellipsize="end"
+                        android:maxLines="2"
+                        android:padding="@dimen/px20"
+                        app:layout_constraintTop_toBottomOf="@+id/linearlayout" />
+
+                    <View
+                        android:id="@+id/view"
+                        style="@style/divider_1"
+                        android:layout_height="@dimen/px10"
+                        app:layout_constraintTop_toBottomOf="@+id/tv_title" />
+
+                    <TextView
+                        android:visibility="gone"
+                        android:id="@+id/tv_promotion"
+                        style="@style/Tv12black"
+                        android:layout_width="match_parent"
+                        android:background="?attr/selectableItemBackground"
+                        android:padding="@dimen/px20"
+                        android:text="促销"
+                        android:textColor="@color/black_A1A1A1"
+                        android:textSize="@dimen/size26"
+                        app:layout_constraintTop_toBottomOf="@+id/view" />
+
+                    <TextView
+                        android:visibility="gone"
+                        android:id="@+id/tv_choice"
+                        style="@style/Tv12black"
+                        android:layout_width="match_parent"
+                        android:background="?attr/selectableItemBackground"
+                        android:drawableRight="@mipmap/my_icon_return"
+                        android:padding="@dimen/px20"
+                        android:text="选择"
+                        android:textColor="@color/black_A1A1A1"
+                        android:textSize="@dimen/size26"
+                        app:layout_constraintTop_toBottomOf="@+id/tv_promotion" />
+
+                    <TextView
+                        android:id="@+id/tv_service"
+                        style="@style/Tv12black"
+                        android:layout_width="match_parent"
+                        android:background="?attr/selectableItemBackground"
+                        android:padding="@dimen/px20"
+                        android:text="服务"
+                        android:textColor="@color/black_A1A1A1"
+                        android:textSize="@dimen/size26"
+                        app:layout_constraintTop_toBottomOf="@+id/tv_choice" />
+
+                    <TextView
+                        android:id="@+id/tv_parameter"
+                        style="@style/Tv12black"
+                        android:layout_width="match_parent"
+                        android:background="?attr/selectableItemBackground"
+                        android:drawableRight="@mipmap/my_icon_return"
+                        android:padding="@dimen/px20"
+                        android:text="参数"
+                        android:textColor="@color/black_A1A1A1"
+                        android:textSize="@dimen/size26"
+                        app:layout_constraintTop_toBottomOf="@+id/tv_service" />
+
+                    <View
+                        android:id="@+id/view1"
+                        style="@style/divider_1"
+                        android:layout_height="@dimen/px10"
+                        app:layout_constraintTop_toBottomOf="@+id/tv_parameter" />
+
+                    <TextView
+                        android:id="@+id/tv_collage_process"
+                        style="@style/Tv12black"
+                        android:padding="@dimen/px20"
+                        android:text="@string/collage_process"
+                        android:textColor="@color/black_A1A1A1"
+                        android:textSize="@dimen/size26"
+                        app:layout_constraintTop_toBottomOf="@+id/view1" />
+
+                    <TextView
+                        app:layout_constraintRight_toLeftOf="@+id/tv_successful_collage"
+                        android:id="@+id/tv_clicking_group"
+                        style="@style/Tv12black"
+                        android:drawableRight="@mipmap/home_icon_arrow"
+                        android:text="@string/clicking_group"
+                        android:textColor="@color/black_A1A1A1"
+                        android:textSize="@dimen/size26"
+                        app:layout_constraintTop_toBottomOf="@+id/tv_collage_process" />
+
+                    <TextView
+                        android:layout_marginLeft="@dimen/px20"
+                        android:layout_marginRight="@dimen/px20"
+                        app:layout_constraintLeft_toLeftOf="parent"
+                        app:layout_constraintRight_toRightOf="parent"
+                        app:layout_constraintLeft_toRightOf="@+id/tv_clicking_group"
+                        android:id="@+id/tv_successful_collage"
+                        style="@style/Tv12black"
+                        android:drawableRight="@mipmap/home_icon_arrow"
+                        android:text="@string/successful_collage"
+                        android:textColor="@color/black_A1A1A1"
+                        android:textSize="@dimen/size26"
+                        app:layout_constraintTop_toBottomOf="@+id/tv_collage_process" />
+
+                    <TextView
+                        app:layout_constraintLeft_toRightOf="@+id/tv_successful_collage"
+                        android:id="@+id/tv_waiting_delivery"
+                        style="@style/Tv12black"
+                        android:text="@string/waiting_delivery"
+                        android:textColor="@color/black_A1A1A1"
+                        android:textSize="@dimen/size26"
+                        app:layout_constraintTop_toBottomOf="@+id/tv_collage_process" />
+
+                    <View
+                        android:id="@+id/view2"
+                        style="@style/divider_1"
+                        android:layout_marginTop="@dimen/px40"
+                        android:layout_height="@dimen/px10"
+                        app:layout_constraintTop_toBottomOf="@+id/tv_clicking_group" />
+
+                    <TextView
+                        android:id="@+id/tv_being_collage"
+                        style="@style/Tv12black"
+                        android:padding="@dimen/px20"
+                        android:text="@string/being_collage"
+                        android:textColor="@color/black_A1A1A1"
+                        android:textSize="@dimen/size26"
+                        app:layout_constraintTop_toBottomOf="@+id/view2" />
+
+                      <com.fanwang.sg.weight.WithScrollListView
+                          app:layout_constraintTop_toBottomOf="@+id/tv_being_collage"
+                          android:id="@+id/lv_collage"
+                          android:divider="@null"
+                          android:layout_width="match_parent"
+                          android:layout_height="wrap_content"/>
+                    
+                    <View
+                        android:visibility="gone"
+                        app:layout_constraintTop_toBottomOf="@+id/lv_collage"
+                        android:layout_height="@dimen/px10"
+                        android:id="@+id/view4"
+                        style="@style/divider_1"/>
+
+                    <LinearLayout
+                        android:id="@+id/linearlayout1"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="horizontal"
+                        android:padding="@dimen/px20"
+                        app:layout_constraintTop_toBottomOf="@+id/view4">
+
+                        <ImageView
+                            android:id="@+id/iv_goods_head"
+                            android:layout_width="@dimen/px110"
+                            android:layout_height="@dimen/px110"
+                            android:scaleType="fitXY"
+                            android:src="@mipmap/place_holder" />
+
+                        <LinearLayout
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="center"
+                            android:layout_weight="1"
+                            android:orientation="vertical">
+
+                            <TextView
+                                android:id="@+id/tv_goods_title"
+                                style="@style/Tv15black"
+                                android:layout_marginLeft="@dimen/px20" />
+
+                            <TextView
+                                android:id="@+id/tv_goods_number"
+                                style="@style/Tv12black"
+                                android:layout_marginLeft="@dimen/px20"
+                                android:textColor="@color/black_A1A1A1" />
+
+                        </LinearLayout>
+
+                        <com.flyco.roundview.RoundTextView
+                            android:id="@+id/tv_goods_into"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="center"
+                            android:padding="@dimen/px10"
+                            android:text="@string/goods_into"
+                            android:textColor="@color/white"
+                            android:textSize="@dimen/size22"
+                            app:rv_backgroundColor="@color/reb_FE2701"
+                            app:rv_cornerRadius="@dimen/px20" />
+
+                    </LinearLayout>
+
+                    <TextView
+                        android:id="@+id/tv_goods_details"
+                        style="@style/Tv15black"
+                        android:layout_width="match_parent"
+                        android:background="@color/white_f4f4f4"
+                        android:gravity="center"
+                        android:padding="@dimen/px30"
+                        android:text="@string/goods_details"
+                        android:textSize="@dimen/size28"
+                        app:layout_constraintTop_toBottomOf="@+id/linearlayout1" />
+
+                    <com.fanwang.sg.weight.X5WebView
+                        android:id="@+id/webView"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        app:layout_constraintTop_toBottomOf="@+id/tv_goods_details" />
+
+                    <android.support.constraint.Group
+                        android:id="@+id/gp_collage_process"
+                        android:visibility="gone"
+                        app:constraint_referenced_ids="tv_collage_process, tv_clicking_group, tv_successful_collage, tv_waiting_delivery, view2"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content" />
+
+                    <android.support.constraint.Group
+                        android:id="@+id/gp_being_collage"
+                        android:visibility="gone"
+                        app:constraint_referenced_ids="tv_being_collage, lv_collage"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content" />
+
+                </android.support.constraint.ConstraintLayout>
+
+            </android.support.v4.widget.NestedScrollView>
+
+            <include layout="@layout/include_goods_bottom"
+                />
+
+        </LinearLayout>
+
+
+        <include layout="@layout/include_top" />
+
+        <com.ganxin.library.LoadDataLayout
+            android:id="@+id/swipeLoadDataLayout"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+        </com.ganxin.library.LoadDataLayout>
+
+    </FrameLayout>
+
+</layout>

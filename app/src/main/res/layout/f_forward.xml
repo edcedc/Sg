@@ -1,0 +1,113 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <data>
+
+    </data>
+
+    <LinearLayout
+        android:background="@color/white_f4f4f4"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical">
+
+        <include layout="@layout/include_top"/>
+
+        <FrameLayout
+            android:layout_width="match_parent"
+            android:paddingRight="@dimen/px20"
+            android:paddingLeft="@dimen/px20"
+            android:paddingTop="@dimen/px10"
+            android:paddingBottom="@dimen/px20"
+            android:layout_height="wrap_content">
+
+            <com.flyco.roundview.RoundLinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:padding="@dimen/px20"
+                app:rv_cornerRadius="@dimen/px10"
+                app:rv_backgroundColor="@color/white">
+
+                <TextView
+                    android:text="@string/forward_price"
+                    style="@style/Tv12black"/>
+
+                <EditText
+                    android:id="@+id/et_price"
+                    android:textSize="@dimen/size45"
+                    android:layout_marginLeft="@dimen/px20"
+                    android:layout_marginTop="@dimen/px20"
+                    android:hint="0.00"
+                    android:inputType="numberDecimal"
+                    android:textColor="@color/black_A1A1A1"
+                    android:background="@null"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content" />
+
+                <View
+                    android:layout_marginTop="@dimen/px20"
+                    style="@style/divider_1"/>
+
+                <TextView
+                    android:id="@+id/tv_balance"
+                    android:layout_marginTop="@dimen/px20"
+                    android:text="@string/forward_price"
+                    style="@style/Tv12black"/>
+
+                 <TextView
+                     android:id="@+id/tv_withdrawRate"
+                     android:textColor="@color/black_A1A1A1"
+                    android:layout_marginTop="@dimen/px20"
+                    android:text="@string/reminder"
+                    style="@style/Tv12black"/>
+
+            </com.flyco.roundview.RoundLinearLayout>
+
+        </FrameLayout>
+
+        <LinearLayout
+            android:id="@+id/ly_bank"
+            android:layout_marginLeft="@dimen/px20"
+            android:layout_marginRight="@dimen/px20"
+            android:background="@color/white"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal">
+
+            <TextView
+                android:padding="@dimen/px20"
+                android:layout_weight="1"
+                android:id="@+id/tv_bank_number"
+                android:hint="@string/please_withdrawals"
+                style="@style/Tv12black" />
+
+            <TextView
+                android:background="@color/black_A1A1A1"
+                android:text="▼"
+                android:gravity="center"
+                android:ems="2"
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent" />
+
+        </LinearLayout>
+
+        <View
+            android:layout_weight="1"
+            android:layout_width="0.1dp"
+            android:layout_height="0.1dp"/>
+
+        <com.flyco.roundview.RoundTextView
+            android:id="@+id/tv_confirm"
+            android:layout_marginRight="@dimen/px20"
+            android:layout_marginLeft="@dimen/px20"
+            android:layout_marginBottom="@dimen/px50"
+            style="@style/RoundBlueTextView"
+            android:text="@string/application_presentation"
+            app:rv_backgroundColor="@color/reb_FE2701"
+            app:rv_backgroundPressColor="@color/reb_C91E00"  />
+
+    </LinearLayout>
+
+</layout>

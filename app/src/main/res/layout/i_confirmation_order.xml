@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    android:orientation="vertical"
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content">
+
+    <com.fanwang.sg.weight.WithScrollListView
+        android:id="@+id/listView"
+        android:divider="@null"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"/>
+
+    <View
+        android:layout_height="@dimen/px10"
+        style="@style/divider_1"/>
+
+    <LinearLayout
+        android:background="@color/white"
+        android:padding="@dimen/px20"
+        android:gravity="right"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal">
+
+        <TextView
+            android:id="@+id/tv_number_goods"
+            android:layout_marginRight="@dimen/px20"
+            android:text="xxxxx"
+            style="@style/Tv12black" />
+
+        <TextView
+            android:id="@+id/tv_price"
+            android:text="xxxxx"
+            android:textColor="@color/reb_FE2701"
+            style="@style/Tv12black" />
+
+    </LinearLayout>
+
+</LinearLayout>

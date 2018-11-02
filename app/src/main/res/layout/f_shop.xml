@@ -1,0 +1,139 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <data>
+
+    </data>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical">
+
+        <include layout="@layout/include_top" />
+
+        <com.ganxin.library.LoadDataLayout
+            android:id="@+id/swipeLoadDataLayout"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <com.lcodecore.tkrefreshlayout.TwinklingRefreshLayout
+                android:id="@+id/refreshLayout"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:background="@color/white_f4f4f4">
+
+                <android.support.v4.widget.NestedScrollView
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent">
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:orientation="vertical">
+
+                        <LinearLayout
+                            android:layout_marginTop="@dimen/px20"
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"
+                            android:background="@color/white"
+                            android:orientation="horizontal"
+                            android:padding="@dimen/px20">
+
+                            <ImageView
+                                android:id="@+id/iv_goods_head"
+                                android:layout_width="@dimen/px110"
+                                android:layout_height="@dimen/px110"
+                                android:scaleType="fitXY"
+                                android:src="@mipmap/place_holder" />
+
+                            <LinearLayout
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_gravity="center"
+                                android:layout_weight="1"
+                                android:orientation="vertical">
+
+                                <TextView
+                                    android:id="@+id/tv_goods_title"
+                                    style="@style/Tv15black"
+                                    android:layout_marginLeft="@dimen/px20" />
+
+                                <TextView
+                                    android:id="@+id/tv_goods_number"
+                                    style="@style/Tv12black"
+                                    android:layout_marginLeft="@dimen/px20"
+                                    android:textColor="@color/black_A1A1A1" />
+
+                            </LinearLayout>
+
+                            <com.flyco.roundview.RoundTextView
+                                android:id="@+id/tv_goods_into"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_gravity="center"
+                                android:padding="@dimen/px10"
+                                android:text="@string/goods_into"
+                                android:textColor="@color/white"
+                                android:textSize="@dimen/size22"
+                                android:visibility="gone"
+                                app:rv_backgroundColor="@color/reb_FE2701"
+                                app:rv_cornerRadius="@dimen/px20" />
+
+                        </LinearLayout>
+
+                        <LinearLayout
+                            android:background="@color/white"
+                            android:orientation="vertical"
+                            android:layout_marginTop="@dimen/px20"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content">
+
+                            <TextView
+                                android:padding="@dimen/px20"
+                                android:text="@string/pick_week"
+                                style="@style/Tv15black" />
+
+                            <com.fanwang.sg.weight.WithScrollGridView
+                                android:id="@+id/gridView"
+                                android:layout_marginLeft="@dimen/px20"
+                                android:layout_marginRight="@dimen/px20"
+                                android:layout_marginBottom="@dimen/px20"
+                                android:horizontalSpacing="@dimen/px10"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:numColumns="3"/>
+
+                        </LinearLayout>
+
+                        <TextView
+                            android:layout_marginTop="@dimen/px20"
+                            android:layout_width="match_parent"
+                            android:background="@color/white"
+                            android:padding="@dimen/px20"
+                            android:text="@string/all_week"
+                            style="@style/Tv15black" />
+
+                        <android.support.v7.widget.RecyclerView
+                            android:id="@+id/recyclerView"
+                            android:background="@color/white"
+                            android:layout_marginTop="@dimen/px10"
+                            android:layout_marginLeft="@dimen/px20"
+                            android:layout_marginRight="@dimen/px20"
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"
+                            android:nestedScrollingEnabled="false"
+                            android:overScrollMode="never" />
+
+                    </LinearLayout>
+
+                </android.support.v4.widget.NestedScrollView>
+
+            </com.lcodecore.tkrefreshlayout.TwinklingRefreshLayout>
+
+        </com.ganxin.library.LoadDataLayout>
+
+    </LinearLayout>
+
+</layout>

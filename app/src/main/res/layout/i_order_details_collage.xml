@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:gravity="center"
+    android:padding="@dimen/px20"
+    android:layout_height="wrap_content"
+    android:orientation="vertical">
+
+    <com.fanwang.sg.weight.CircleImageView
+        android:id="@+id/iv_head"
+        android:layout_width="@dimen/px140"
+        android:layout_height="@dimen/px140"
+        android:src="@mipmap/icon_1"/>
+
+    <TextView
+        android:id="@+id/tv_name"
+        android:layout_marginTop="@dimen/px10"
+        android:text="xxxxx"
+        style="@style/Tv15Reb" />
+
+</LinearLayout>

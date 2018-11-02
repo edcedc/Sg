@@ -1,0 +1,107 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <data>
+
+    </data>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical">
+
+        <include layout="@layout/include_top"/>
+
+        <LinearLayout
+            android:background="?attr/selectableItemBackground"
+            android:padding="@dimen/px30"
+            android:gravity="center"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal">
+
+            <TextView
+                android:layout_weight="1"
+                android:text="@string/head_img"
+                style="@style/Tv15black" />
+
+            <ImageView
+                android:layout_height="@dimen/px100"
+                android:layout_width="@dimen/px100"
+                android:id="@+id/iv_head"
+                style="@style/user_head" />
+
+            <ImageView
+                android:layout_marginLeft="@dimen/px30"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:background="@mipmap/my_icon_return" />
+
+        </LinearLayout>
+
+        <View
+            style="@style/divider_1"/>
+
+        <LinearLayout
+            android:id="@+id/ly_nick"
+            android:background="?attr/selectableItemBackground"
+            android:padding="@dimen/px30"
+            android:gravity="center"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal">
+
+            <TextView
+                android:layout_weight="1"
+                android:text="@string/nick"
+                style="@style/Tv15black" />
+
+            <TextView
+                android:id="@+id/tv_nick"
+                android:textColor="@color/black_898989"
+                style="@style/Tv15black" />
+
+            <ImageView
+                android:layout_marginLeft="@dimen/px30"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:background="@mipmap/my_icon_return" />
+
+        </LinearLayout>
+
+        <View
+            style="@style/divider_1"/>
+
+        <LinearLayout
+            android:id="@+id/ly_sex"
+            android:background="?attr/selectableItemBackground"
+            android:padding="@dimen/px30"
+            android:gravity="center"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal">
+
+            <TextView
+                android:layout_weight="1"
+                android:text="@string/sex"
+                style="@style/Tv15black" />
+
+            <TextView
+                android:id="@+id/tv_sex"
+                android:textColor="@color/black_898989"
+                style="@style/Tv15black" />
+
+            <ImageView
+                android:layout_marginLeft="@dimen/px30"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:background="@mipmap/my_icon_return" />
+
+        </LinearLayout>
+
+        <View
+            style="@style/divider_1"/>
+
+    </LinearLayout>
+
+</layout>

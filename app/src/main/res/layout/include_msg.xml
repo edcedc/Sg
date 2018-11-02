@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content">
+
+    <TextView
+        android:id="@+id/tv_msg_number"
+        android:layout_gravity="right"
+        android:background="@drawable/circle_red"
+        android:text="0"
+        android:visibility="gone"
+        android:textColor="#ffffff"
+        android:gravity="center"
+        android:layout_width="12dp"
+        android:textSize="9sp"
+        android:layout_height="12dp" />
+
+    <ImageView
+        android:layout_margin="@dimen/px10"
+        android:id="@+id/iv_search_img"
+        android:layout_width="@dimen/px36"
+        android:layout_height="@dimen/px36"
+        android:background="@mipmap/home_icon_news" />
+
+</FrameLayout>

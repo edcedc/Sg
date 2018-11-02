@@ -1,0 +1,161 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <data>
+
+    </data>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@color/white_f4f4f4"
+        android:orientation="vertical">
+
+        <include layout="@layout/include_top"/>
+
+        <android.support.constraint.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@color/white"
+            android:paddingBottom="10dp">
+
+            <ImageView
+                android:id="@+id/iv_img"
+                android:layout_width="70dp"
+                android:layout_height="70dp"
+                android:layout_margin="10dp"
+                android:scaleType="fitXY"
+                android:src="@mipmap/place_holder"
+                app:layout_constraintLeft_toLeftOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <TextView
+                app:layout_constraintTop_toTopOf="@id/iv_img"
+                android:layout_marginLeft="10dp"
+                android:id="@+id/tv_name"
+                style="@style/Tv15black"
+                android:ellipsize="end"
+                android:maxLines="2"
+                android:text="xxxxxxx"
+                android:textSize="@dimen/size26"
+                app:layout_constraintBottom_toTopOf="@+id/tv_price"
+                app:layout_constraintStart_toEndOf="@+id/iv_img" />
+
+            <TextView
+                android:layout_marginLeft="10dp"
+                android:id="@+id/tv_price"
+                style="@style/Tv15Reb"
+                android:text="xxx"
+                android:textColor="@color/reb_FE2701"
+                app:layout_constraintBottom_toTopOf="@+id/tv_number"
+                app:layout_constraintStart_toEndOf="@+id/iv_img"
+                app:layout_constraintTop_toBottomOf="@+id/tv_name" />
+
+            <TextView
+                app:layout_constraintBottom_toBottomOf="@id/iv_img"
+                android:layout_marginLeft="10dp"
+                android:id="@+id/tv_number"
+                style="@style/Tv12Reb"
+                android:text="xxxx"
+                android:textColor="@color/black_A1A1A1"
+                app:layout_constraintStart_toEndOf="@+id/iv_img"
+                app:layout_constraintTop_toBottomOf="@+id/tv_price" />
+
+            <TextView
+                android:id="@+id/tv_price2"
+                style="@style/Tv12Reb"
+                android:layout_marginLeft="20dp"
+                android:text="xxxx"
+                android:textColor="@color/black_A1A1A1"
+                app:layout_constraintTop_toTopOf="@id/tv_price"
+                app:layout_constraintBottom_toBottomOf="@id/tv_price"
+                app:layout_constraintStart_toEndOf="@id/tv_price"/>
+
+        </android.support.constraint.ConstraintLayout>
+
+        <View
+            android:layout_height="@dimen/px10"
+            style="@style/divider_1"/>
+
+        <android.support.constraint.ConstraintLayout
+            android:id="@+id/constraintLayout2"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@color/white"
+            android:padding="@dimen/px40"
+            app:layout_constraintTop_toBottomOf="@+id/constraintLayout1">
+
+            <TextView
+                android:visibility="gone"
+                android:id="@+id/tv_collage_title"
+                style="@style/Tv15black"
+                app:layout_constraintLeft_toLeftOf="parent"
+                app:layout_constraintRight_toRightOf="parent" />
+
+            <com.fanwang.sg.weight.WithScrollGridView
+                android:id="@+id/gv_collage"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:numColumns="3"
+                app:layout_constraintTop_toBottomOf="@+id/tv_collage_title" />
+
+            <LinearLayout
+                android:id="@+id/linearlayout"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                app:layout_constraintLeft_toLeftOf="parent"
+                app:layout_constraintRight_toRightOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/gv_collage">
+
+                <TextView
+                    android:id="@+id/tv_collage_time"
+                    style="@style/Tv15black"
+                    android:text="拼团剩余时间："
+                    android:textStyle="bold" />
+
+                <cn.iwgang.countdownview.CountdownView
+                    android:id="@+id/tv_collage_time2"
+                    android:layout_width="wrap_content"
+                    android:layout_height="20dp"
+                    android:layout_marginLeft="@dimen/px20"
+                    app:isShowDay="true"
+                    app:isShowHour="true"
+                    app:isShowMillisecond="false"
+                    app:isShowMinute="true"
+                    app:isShowSecond="true"
+                    app:suffixDay="："
+                    app:suffixGravity="center"
+                    app:suffixHour="："
+                    app:suffixMinute="："
+                    app:suffixTextColor="@color/reb_FE2701"
+                    app:suffixTextSize="@dimen/size32"
+                    app:timeTextColor="@color/reb_FE2701"
+                    app:timeTextSize="@dimen/size32" />
+
+            </LinearLayout>
+
+            <TextView
+                style="@style/Tv12black"
+                android:layout_marginTop="@dimen/px10"
+                android:text="@string/collage_rule"
+                android:textColor="@color/black_898989"
+                app:layout_constraintLeft_toLeftOf="parent"
+                app:layout_constraintRight_toRightOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/linearlayout" />
+
+        </android.support.constraint.ConstraintLayout>
+
+        <com.flyco.roundview.RoundTextView
+            android:id="@+id/tv_confirm"
+            style="@style/RoundBlueTextView"
+            android:layout_marginTop="@dimen/px70"
+            android:layout_width="250dp"
+            android:text="@string/participate_collage"
+            app:rv_backgroundColor="@color/reb_FE2701"
+            app:rv_cornerRadius="@dimen/px10"  />
+
+    </LinearLayout>
+
+</layout>

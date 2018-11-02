@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <data>
+
+    </data>
+
+    <com.ganxin.library.LoadDataLayout
+        android:id="@+id/swipeLoadDataLayout"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical">
+
+            <com.yanzhenjie.sofia.StatusView
+                android:id="@+id/status_view"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content" />
+
+            <include
+                android:id="@+id/search"
+                layout="@layout/include_search" />
+
+            <android.support.constraint.ConstraintLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:background="@color/white_f4f4f4">
+
+                <ListView
+                    android:id="@+id/lv_left"
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:scrollbars="none"
+                    android:dividerHeight="@dimen/px3"
+                    android:divider="@color/black_EEEEEE"
+                    app:layout_constraintEnd_toStartOf="@+id/fl_container"
+                    app:layout_constraintHorizontal_bias="0.5"
+                    app:layout_constraintHorizontal_weight="0.3"
+                    app:layout_constraintStart_toStartOf="parent" />
+
+                <FrameLayout
+                    android:id="@+id/fl_container"
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintHorizontal_bias="0.5"
+                    app:layout_constraintHorizontal_weight="1"
+                    app:layout_constraintStart_toEndOf="@+id/lv_left" />
+
+            </android.support.constraint.ConstraintLayout>
+        </LinearLayout>
+
+    </com.ganxin.library.LoadDataLayout>
+
+</layout>

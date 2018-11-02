@@ -1,0 +1,199 @@
+<resources>
+    <string name="app_name">奢购</string>
+    <string name="setting">设置</string>
+    <string name="resume">Resume</string>
+    <string name="cancel">取消</string>
+    <string name="title_dialog">Tips</string>
+    <string name="message_permission_rationale">Grant the following permissions to continue the program:\n\n%1$s</string>
+    <string name="message_overlay_failed">Your phone is not allowed us to draw on other applications.</string>
+    <string name="message_permission_always_failed">我们需要以下权限，请在设置中为我们开启：\n\n%1$s</string>
+    <string name="not_wx_pay">您未安装最新版本微信，不支持微信支付，请安装或升级微信版本</string>
+
+    <string name="complete">完成</string>
+    <string name="complete2">确定</string>
+    <string name="complete3">保存</string>
+    <string name="clone">关闭</string>
+    <string name="clone2">关闭申请</string>
+    <string name="monetary_symbol">¥</string>
+    <string name="monetary_symbol2">¥ </string>
+    <string name="error_search_null">搜索不能为空</string>
+    <string name="error_nick_null">昵称不能为空</string>
+    <string name="error_forward_null">提现金额不能为空</string>
+    <string name="error_forward_null2">超过已有金额</string>
+    <string name="error_reason_null">原因不能为空</string>
+    <string name="share">分享</string>
+    <string name="error_">请选择完整</string>
+    <string name="error_2">请选择属性</string>
+    <string name="error_3">请输入手机号码</string>
+    <string name="error_pwd">当前密码不能为空</string>
+    <string name="error_pwd2">新密码不能为空</string>
+    <string name="error_pwd3">重复密码不能为空</string>
+    <string name="error_pwd4">新密码和重复密码不一致</string>
+    <string name="message">系统消息</string>
+    <string name="message_desc">通知详情</string>
+    <string name="help_center">帮助中心</string>
+    <string name="contact_customer_service">联系客服</string>
+    <string name="error_stock">请选择库存</string>
+    <string name="error_collection">请选择</string>
+    <string name="error_collection2">请选择商品状态</string>
+
+    <!--登录-->
+    <string name="please_phone">请输入手机号</string>
+    <string name="error_format">手机号码格式错误</string>
+    <string name="please_code">请输入验证码</string>
+    <string name="get_code">获取验证码</string>
+    <string name="unregistered_phone">未注册手机号将自动创建账号</string>
+    <string name="login">登录</string>
+    <string name="bing">绑定</string>
+    <string name="bing_phone">绑定手机号码</string>
+
+    <!--修改资料-->
+    <string name="me_data">我的资料</string>
+    <string name="update_nick">编辑昵称</string>
+    <string name="head_img">头像</string>
+    <string name="nick">昵称</string>
+    <string name="sex">性别</string>
+    <string name="nick2">好名字可以让更多人记住你哦~</string>
+
+    <!--首页-->
+    <string name="home_keyword">输入关键字</string>
+    <string name="second_killing_buying">秒杀抢购</string>
+    <string name="collage">拼团</string>
+    <string name="collage2">超值拼团</string>
+    <string name="more">更多 >></string>
+    <string name="new_arrivals">新品推荐</string>
+    <string name="new_arrivals2">新品专区</string>
+    <string name="discount">优惠特卖专区</string>
+    <string name="full_zone">满赠专区</string>
+    <string name="full_subtraction">满减专区</string>
+    <string name="pick_week">推荐商品</string>
+    <string name="all_week">全部商品</string>
+
+    <!--购物车-->
+    <string name="total_selection">全选</string>
+    <string name="total">合计：</string>
+    <string name="shopping_cart">购物车</string>
+    <string name="administration">管理</string>
+    <string name="move_favorites">移入收藏夹</string>
+    <string name="delete">删除</string>
+    <string name="cart_number">购买数量</string>
+
+    <!--我的-->
+    <string name="me">我的</string>
+    <string name="login_register">登录/注册</string>
+    <string name="my_order">我的订单</string>
+    <string name="view_orders">查看全部订单</string>
+
+    <!--我的订单-->
+    <string name="online_service">在线客服</string>
+    <string name="online_service2">客服</string>
+    <string name="payment">付款</string>
+    <string name="cancel_order">取消订单</string>
+    <string name="application_refund">申请退款</string>
+    <string name="confirm_receipt_goods">确认收货</string>
+    <string name="order_details">订单详情</string>
+    <string name="after_details">售后详情</string>
+    <string name="collage_rule">拼团规则：好友拼团·人满发货·人不满退款</string>
+    <string name="collage_rule3">商家将尽快发货，请耐心等待</string>
+    <string name="collage_rule2">邀请好友拼团</string>
+    <string name="confirmation_payment">确认支付</string>
+    <string name="pay_type">支付方式</string>
+    <string name="pay">立即支付</string>
+    <string name="home">回首页逛逛</string>
+    <string name="return_goods">请输入退货的原因</string>
+    <string name="reason">原因</string>
+    <string name="top_return_goods">退货退款</string>
+    <string name="top_return_goods2">仅退款</string>
+    <string name="return_goods_order">请填写退货物流单号</string>
+    <string name="return_goods_order2">请填写退货物流公司</string>
+    <string name="return_submit">提交退货申请</string>
+    <string name="integral_balance">积分商品只能余额支付</string>
+
+    <!--我的钱包-->
+    <string name="my_wallet">我的钱包</string>
+    <string name="put_forward">提现</string>
+    <string name="my_distribution">我的分销</string>
+    <string name="create_posters">生成宣传海报</string>
+    <string name="create_posters2">宣传海报</string>
+    <string name="distribution_rules">分销规则</string>
+    <string name="forward_price">输入提现金额</string>
+    <string name="reminder">温馨提示：额外扣除银行手续费，费率0%，最低0.1</string>
+    <string name="please_withdrawals">请选择提现银行</string>
+    <string name="application_presentation">提交提现申请</string>
+    <string name="my_bank">我的银行卡</string>
+    <string name="add_bank">点击添加</string>
+    <string name="add_bank3">添加</string>
+    <string name="add_bank2">添加银行卡</string>
+    <string name="cardholder">持卡人</string>
+    <string name="card_number">卡号</string>
+    <string name="bank_name">银行名称</string>
+    <string name="bank_branch">支行名称</string>
+    <string name="please_name">请输入姓名</string>
+    <string name="please_bank_number">请输入卡号</string>
+    <string name="please_branch_name">请输入支行名称</string>
+    <string name="please_bank_name">请输入银行名称</string>
+    <string name="present_record">提现记录</string>
+    <string name="detailed">明细</string>
+
+    <!--我的收藏-->
+    <string name="my_collection">我的收藏</string>
+    <string name="integral_rule">积分规则</string>
+    <string name="immediate">立即抢购</string>
+    <string name="refund">退款/售后</string>
+
+    <!--设置-->
+    <string name="set">设置</string>
+    <string name="exit_logon">退出登录</string>
+    <string name="update_phone">更改手机号码</string>
+    <string name="update_pwd">修改密码</string>
+    <string name="service_agreement">服务协议</string>
+    <string name="abouit_us">关于我们</string>
+    <string name="cumulative_income">"累计收益（元）"</string>
+
+    <!--商品详情-->
+    <string name="goods_details">商品详情</string>
+    <string name="goods_parameter">商品参数</string>
+    <string name="goods_into">进店逛逛</string>
+    <string name="add_cart">加入购物车</string>
+    <string name="purchase_immediately">立即购买</string>
+    <string name="forthcoming_robbing">即将开抢</string>
+    <string name="collage_process">拼团流程</string>
+    <string name="clicking_group">点击参团</string>
+    <string name="successful_collage">拼团成功</string>
+    <string name="waiting_delivery">等待发货</string>
+    <string name="being_collage">正在拼单</string>
+    <string name="join_group">参团</string>
+    <string name="immediate_payment">立即支付</string>
+    <string name="confirmation_order">确认订单</string>
+    <string name="pay_success">支付成功</string>
+    <string name="pay_error">支付失败</string>
+    <string name="pay_state">支付结果</string>
+    <string name="participate_collage">参与拼团</string>
+    <string name="after_sale_goods">选择售后商品</string>
+    <string name="after_sale_type">选择售后类型</string>
+    <string name="view_details">查看详情</string>
+    <string name="look_logistics">查看物流</string>
+    <string name="to_share">去分享</string>
+    <string name="logistics_details">物流详情</string>
+    <string name="collage_friends">点击图标邀请好友拼单吧~</string>
+    <string name="zking">扫码小程序码\n马上拼团 </string>
+    <string name="zking2">扫描二维码 </string>
+
+    <!--我的地址-->
+    <string name="add_address">添加新地址</string>
+    <string name="my_address">我的地址</string>
+    <string name="default_address">默认地址</string>
+    <string name="edit_address">编辑地址</string>
+    <string name="save_address">保存地址</string>
+    <string name="edit">编辑</string>
+    <string name="name_receiving">收货姓名：</string>
+    <string name="please_name_receiving">请输入收货人姓名</string>
+    <string name="phone_receiving">收货手机：</string>
+    <string name="please_phone_receiving">请输入收货人手机号码</string>
+    <string name="address_receiving">收货地区：</string>
+    <string name="please_address_receiving">请输入收货人地址</string>
+    <string name="detailed_address">详细地址：</string>
+    <string name="please_detailed_address">请输入详细的收货地址</string>
+    <string name="error_address">地址不能为空</string>
+
+</resources>

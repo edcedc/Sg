@@ -1,0 +1,73 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:background="?attr/selectableItemBackground"
+    android:padding="@dimen/px20">
+
+    <com.fanwang.sg.weight.RoundImageView
+        android:id="@+id/iv_img"
+        android:layout_width="@dimen/px150"
+        android:layout_height="@dimen/px150"
+        android:scaleType="fitXY"
+        android:src="@mipmap/place_holder" />
+
+    <TextView
+        android:id="@+id/tv_title"
+        style="@style/Tv15black"
+        android:ellipsize="end"
+        android:maxLines="2"
+        android:paddingLeft="@dimen/px30"
+        android:paddingRight="@dimen/px20"
+        android:textSize="@dimen/size26"
+        app:layout_constraintBottom_toTopOf="@+id/tv_price"
+        app:layout_constraintLeft_toRightOf="@+id/iv_img"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/tv_price"
+        style="@style/Tv12Reb"
+        android:layout_marginLeft="@dimen/px30"
+        android:textSize="@dimen/size26"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintLeft_toRightOf="@+id/iv_img"
+        app:layout_constraintTop_toBottomOf="@+id/tv_title" />
+
+    <com.fanwang.sg.weight.StrikethroughTextView
+        android:id="@+id/tv_price2"
+        style="@style/Tv12Reb"
+        android:layout_marginLeft="@dimen/px20"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/tv_title"
+        android:textSize="@dimen/size26"
+        app:layout_constraintLeft_toRightOf="@+id/tv_price"/>
+
+    <com.flyco.roundview.RoundTextView
+        android:id="@+id/tv_discount"
+        style="@style/Tv12Reb"
+        android:layout_marginLeft="@dimen/px20"
+        android:paddingLeft="@dimen/px10"
+        android:paddingRight="@dimen/px10"
+        android:textSize="@dimen/size16"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/tv_title"
+        app:layout_constraintLeft_toRightOf="@+id/tv_price2"
+        app:rv_strokeColor="@color/reb_FE2701"
+        app:rv_strokeWidth="@dimen/px2" />
+
+    <com.flyco.roundview.RoundTextView
+        android:id="@+id/tv_state"
+        android:visibility="gone"
+        style="@style/Tv12Reb"
+        android:layout_marginLeft="@dimen/px20"
+        android:paddingLeft="@dimen/px10"
+        android:paddingRight="@dimen/px10"
+        android:textSize="@dimen/size16"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/tv_title"
+        app:layout_constraintLeft_toRightOf="@+id/tv_discount"
+        app:rv_strokeColor="@color/reb_FE2701"
+        app:rv_strokeWidth="@dimen/px2" />
+
+</android.support.constraint.ConstraintLayout>

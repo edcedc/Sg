@@ -1,0 +1,119 @@
+<?xml version="1.0" encoding="utf-8"?>
+<com.flyco.roundview.RoundLinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    app:rv_backgroundColor="@color/white"
+    app:rv_cornerRadius_TR="@dimen/px10"
+    app:rv_cornerRadius_TL="@dimen/px10">
+
+    <android.support.constraint.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        tools:ignore="MissingConstraints">
+
+        <FrameLayout
+            android:id="@+id/fy_close"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="right"
+            android:padding="@dimen/px20"
+            app:layout_constraintRight_toRightOf="parent">
+
+            <ImageView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:background="@mipmap/home_icon_cancel" />
+
+        </FrameLayout>
+
+        <ImageView
+            android:id="@+id/iv_img"
+            android:layout_width="@dimen/px141"
+            android:layout_height="@dimen/px141"
+            android:layout_margin="@dimen/px30"
+            android:src="@mipmap/place_holder"
+            android:scaleType="fitXY"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <TextView
+            android:id="@+id/tv_price"
+            style="@style/Tv12Reb"
+            android:textSize="@dimen/size26"
+            android:layout_marginLeft="@dimen/px30"
+            app:layout_constraintBottom_toBottomOf="@id/iv_img"
+            app:layout_constraintLeft_toRightOf="@+id/iv_img"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <TextView
+            android:id="@+id/tv_stock"
+            style="@style/Tv12Reb"
+            android:layout_marginLeft="@dimen/px30"
+            android:textColor="@color/black_A1A1A1"
+            app:layout_constraintLeft_toRightOf="@+id/iv_img"
+            app:layout_constraintStart_toEndOf="@+id/iv_img"
+            app:layout_constraintTop_toBottomOf="@+id/tv_price" />
+
+        <TextView
+            android:id="@+id/tv_set"
+            style="@style/Tv12black"
+            android:layout_marginLeft="@dimen/px30"
+            android:text="选择颜色分类"
+            android:textSize="@dimen/size26"
+            app:layout_constraintLeft_toRightOf="@+id/iv_img"
+            app:layout_constraintStart_toEndOf="@+id/iv_img"
+            app:layout_constraintTop_toBottomOf="@+id/tv_stock" />
+
+        <View
+            android:id="@+id/view"
+            style="@style/divider_1"
+            android:layout_marginTop="@dimen/px30"
+            app:layout_constraintTop_toBottomOf="@+id/iv_img" />
+
+        <android.support.v7.widget.RecyclerView
+            android:id="@+id/listView"
+            android:layout_marginLeft="@dimen/px30"
+            android:layout_marginRight="@dimen/px30"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:nestedScrollingEnabled="false"
+            android:overScrollMode="never"
+            app:layout_constraintTop_toBottomOf="@+id/view" />
+
+        <View
+            android:layout_marginTop="@dimen/px30"
+            android:id="@+id/view1"
+            style="@style/divider_1"
+            app:layout_constraintTop_toBottomOf="@+id/listView" />
+
+        <TextView
+            app:layout_constraintLeft_toLeftOf="parent"
+            android:layout_margin="@dimen/px30"
+            app:layout_constraintTop_toBottomOf="@+id/view1"
+            android:text="@string/cart_number"
+            style="@style/Tv15black" />
+
+        <com.fanwang.sg.weight.AddNumberView
+            android:id="@+id/tv_add_number"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_margin="@dimen/px30"
+            app:layout_constraintRight_toRightOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/view1"
+            app:layout_constraintVertical_chainStyle="spread_inside" />
+
+        <com.flyco.roundview.RoundTextView
+            android:id="@+id/tv_confirm"
+            android:layout_marginTop="@dimen/px140"
+            style="@style/RoundBlueTextView"
+            android:text="@string/complete2"
+            app:layout_constraintTop_toBottomOf="@+id/tv_add_number"
+            app:rv_backgroundColor="@color/reb_FE2701"
+            app:rv_backgroundPressColor="@color/reb_C91E00" />
+
+    </android.support.constraint.ConstraintLayout>
+
+</com.flyco.roundview.RoundLinearLayout>

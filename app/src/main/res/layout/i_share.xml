@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="0dp"
+    android:layout_weight="1"
+    android:padding="@dimen/px30"
+    android:layout_height="wrap_content">
+
+    <TextView
+        android:layout_gravity="center"
+        android:gravity="center"
+        android:drawablePadding="@dimen/px10"
+        android:id="@+id/tv_text"
+        android:text="xxx"
+        style="@style/Tv12black" />
+
+</FrameLayout>

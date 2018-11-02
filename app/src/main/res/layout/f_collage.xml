@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tl="http://schemas.android.com/apk/res-auto">
+
+    <data>
+
+    </data>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical">
+
+        <include layout="@layout/include_top" />
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:orientation="vertical">
+
+                <com.fanwang.sg.weight.SlidingTabLayout
+                    android:id="@+id/tb_layout"
+                    android:layout_width="match_parent"
+                    android:layout_height="48dp"
+                    android:background="@color/black_E5E5E5"
+                    tl:tl_tab_padding="15dp"
+                    tl:tl_tab_space_equal="true"
+                    tl:tl_textsize="@dimen/size28"
+                    tl:tl_textSelectColor="@color/reb_FE2701"
+                    tl:tl_textUnselectColor="@color/black_3E3A39"
+                    tl:tl_bar_color="#ffffff"
+                    tl:tl_indicator_color="@android:color/transparent"
+                    />
+
+                <com.fanwang.sg.weight.NoScrollViewPager
+                    android:id="@+id/viewPager"
+                    android:layout_width="match_parent"
+                    android:layout_height="0dp"
+                    android:layout_weight="1" />
+
+            </LinearLayout>
+
+    </LinearLayout>
+
+</layout>

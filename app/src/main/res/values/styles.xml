@@ -1,0 +1,123 @@
+<resources>
+
+    <!-- Base application theme. -->
+    <style name="AppTheme" parent="Theme.AppCompat.Light.DarkActionBar">
+        <!-- Customize your theme here. -->
+        <item name="colorPrimary">@color/colorPrimary</item>
+        <item name="colorPrimaryDark">@color/colorPrimaryDark</item>
+        <item name="colorAccent">@color/colorAccent</item>
+        <item name="windowActionBar">false</item>
+        <item name="windowNoTitle">true</item>
+        <item name="android:textAllCaps">false</item>
+    </style>
+
+    <style name="AppTheme.AppBarLight" parent="ThemeOverlay.AppCompat.Light" >
+        <!--<item name="colorPrimary">@color/gray_ffeff0f0</item>-->
+        <!--<item name="colorPrimaryDark">@color/gray_ffeff0f0</item>-->
+    </style>
+
+    <style name="AppTheme.Popup" parent="ThemeOverlay.AppCompat.Light" />
+
+    <style name="divider_dropshadow">
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:layout_height">2dp</item>
+        <item name="android:background">@drawable/toolbar_dropshadow</item>
+    </style>
+
+    <!-- 自定义样式的name属性用于引用，父亲是默认的style -->
+    <style name="InitProgressBar" parent="@android:style/Widget.ProgressBar.Horizontal">
+        <!-- 最大高度50dp，最小高度10dp，进度值确定，Drawable样式文件引用 -->
+        <item name="android:maxHeight">50dp</item>
+        <item name="android:minHeight">10dp</item>
+        <item name="android:indeterminateOnly">false</item>
+        <item name="android:indeterminateDrawable">@android:drawable/progress_indeterminate_horizontal</item>
+        <item name="android:progressDrawable">@drawable/init_progressbar</item>
+    </style>
+
+    <!--parent设置为启动页的theme-->
+    <style name="AppTheme.customeTheme" parent="AppTheme">
+        <item name="android:windowBackground">@mipmap/splash</item>
+        <!--
+                <item name="android:windowFullscreen">?android:windowNoTitle</item>
+
+                <item name="windowActionBar">false</item>
+                <item name="windowNoTitle">true</item>
+                <item name="android:textAllCaps">false</item>
+                -->
+    </style>
+
+    <style name="Tv12black" parent="TextStyle">
+        <item name="android:textColor">@color/black_3E3A39</item>
+        <item name="android:textSize">@dimen/size24</item>
+    </style>
+
+    <style name="Tv15black" parent="TextStyle">
+        <item name="android:textColor">@color/black_3E3A39</item>
+        <item name="android:textSize">@dimen/size30</item>
+    </style>
+
+    <style name="Tv12Reb" parent="TextStyle">
+        <item name="android:textColor">@color/reb_FE2701</item>
+        <item name="android:textSize">@dimen/size24</item>
+    </style>
+
+    <style name="Tv15Reb" parent="TextStyle">
+        <item name="android:textColor">@color/reb_FE2701</item>
+        <item name="android:textSize">@dimen/size30</item>
+    </style>
+
+
+    <style name="TextStyle">
+        <item name="android:layout_width">wrap_content</item>
+        <item name="android:layout_height">wrap_content</item>
+        <!--<item name="android:gravity">center</item>-->
+        <!--<item name="android:maxLines">3</item>-->
+        <!--<item name="android:ellipsize">end</item>-->
+    </style>
+
+    <style name="RoundBlueTextView">
+        <item name="android:text">xxxx</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:textColor">@android:color/white</item>
+        <item name="android:textSize">@dimen/size30</item>
+        <item name="android:padding">@dimen/px20</item>
+        <item name="android:gravity">center</item>
+        <item name="android:layout_gravity">center</item>
+    </style>
+
+    <style name="FragmentDialogAnimation" mce_bogus="1" parent="android:Animation">
+        <item name="android:windowEnterAnimation">@anim/dialog_push_in</item>
+        <item name="android:windowExitAnimation">@anim/dialog_push_out</item>
+    </style>
+
+    <style name="divider_1">
+        <item name="android:layout_height">1dp</item>
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:background">@color/white_f4f4f4</item>
+    </style>
+
+
+    <style name="divider_2">
+        <item name="android:background">@color/reb_FE2701</item>
+        <item name="android:layout_width">@dimen/px5</item>
+        <item name="android:layout_height">match_parent</item>
+        <item name="android:layout_marginTop">@dimen/px8</item>
+        <item name="android:layout_marginBottom">@dimen/px8</item>
+    </style>
+
+    <style name="user_head">
+        <item name="android:scaleType">centerCrop</item>
+        <item name="android:src">@mipmap/place_holder_user</item>
+        <item name="android:layout_width">@dimen/px160</item>
+        <item name="android:layout_height">@dimen/px160</item>
+    </style>
+
+    <style name="myTransparent">
+        <item name="android:windowBackground">@color/transparent</item>
+        <item name="android:windowNoTitle">true</item>
+        <item name="android:windowIsTranslucent">true</item>
+        <item name="android:windowAnimationStyle">@android:style/Animation.Translucent</item>
+    </style>
+
+</resources>

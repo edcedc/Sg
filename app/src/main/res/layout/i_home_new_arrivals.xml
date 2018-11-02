@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical"
+    android:layout_width="match_parent"
+    android:padding="@dimen/px30"
+    android:layout_height="wrap_content">
+
+    <LinearLayout
+        android:layout_marginBottom="@dimen/px20"
+        android:gravity="bottom|left"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal">
+
+        <View
+            style="@style/divider_2"/>
+
+        <TextView
+            android:id="@+id/tv_title"
+            android:layout_marginLeft="@dimen/px20"
+            android:textColor="@color/black"
+            android:layout_weight="1"
+            android:text="@string/new_arrivals"
+            style="@style/Tv15black" />
+
+        <TextView
+            android:id="@+id/tv_more"
+            android:text="@string/more"
+            android:textColor="@color/black_898989"
+            android:layout_marginLeft="@dimen/px20"
+            style="@style/Tv15black" />
+
+    </LinearLayout>
+
+    <com.fanwang.sg.weight.WithScrollGridView
+        android:id="@+id/gridView"
+        android:horizontalSpacing="@dimen/px10"
+        android:numColumns="4"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"/>
+
+</LinearLayout>

@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:orientation="vertical"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content">
+
+    <cn.bingoogolapple.bgabanner.BGABanner
+        android:id="@+id/banner"
+        android:visibility="gone"
+        android:layout_width="match_parent"
+        android:layout_height="170dp"
+        android:scaleType="fitXY"
+        app:banner_pageChangeDuration="2000"
+        app:banner_pointContainerBackground="@android:color/transparent"
+        app:banner_pointTopBottomMargin="3dp"
+        app:banner_transitionEffect="defaultEffect" />
+
+    <com.fanwang.sg.weight.WithScrollGridView
+        android:id="@+id/gridView"
+        android:layout_marginTop="@dimen/px10"
+        android:layout_marginLeft="@dimen/px30"
+        android:layout_marginRight="@dimen/px30"
+        android:horizontalSpacing="@dimen/px10"
+        android:verticalSpacing="@dimen/px10"
+        android:numColumns="4"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"/>
+
+</LinearLayout>

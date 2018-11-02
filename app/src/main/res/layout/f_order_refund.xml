@@ -1,0 +1,187 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <data>
+
+    </data>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@color/white_f4f4f4"
+        android:orientation="vertical">
+
+        <include layout="@layout/include_top"/>
+
+        <android.support.v4.widget.NestedScrollView
+            android:layout_width="match_parent"
+            android:fillViewport="true"
+            android:layout_height="match_parent">
+
+        <android.support.constraint.ConstraintLayout
+            android:paddingTop="@dimen/px10"
+            android:paddingLeft="@dimen/px20"
+            android:paddingRight="@dimen/px20"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent" >
+
+            <com.flyco.roundview.RoundFrameLayout
+                android:id="@+id/fy_text"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                app:rv_backgroundColor="@color/white">
+
+                <android.support.v7.widget.AppCompatEditText
+                    android:id="@+id/et_text"
+                    android:gravity="top"
+                    android:padding="@dimen/px20"
+                    android:minLines="7"
+                    android:layout_width="match_parent"
+                    android:background="@null"
+                    android:textSize="@dimen/size24"
+                    android:hint="@string/return_goods"
+                    android:layout_height="wrap_content" />
+
+            </com.flyco.roundview.RoundFrameLayout>
+
+            
+
+            <LinearLayout
+                android:visibility="gone"
+                android:layout_marginTop="@dimen/px20"
+                app:layout_constraintTop_toBottomOf="@id/fy_text"
+                android:id="@+id/ly_refund_state"
+                android:background="@color/white"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal">
+
+                <TextView
+                    android:hint="@string/error_collection2"
+                    android:padding="@dimen/px20"
+                    android:layout_weight="1"
+                    android:id="@+id/tv_refund"
+                    style="@style/Tv12black" />
+
+                <TextView
+                    android:background="@color/black_A1A1A1"
+                    android:text="▼"
+                    android:gravity="center"
+                    android:ems="2"
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent" />
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:visibility="gone"
+                android:layout_marginTop="@dimen/px20"
+                app:layout_constraintTop_toBottomOf="@id/ly_refund_state"
+                android:id="@+id/ly_logistics"
+                android:background="@color/white"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal">
+
+                <TextView
+                    android:padding="@dimen/px20"
+                    android:layout_weight="1"
+                    android:text="@string/return_goods_order2"
+                    android:id="@+id/tv_logistics"
+                    style="@style/Tv12black" />
+
+                <TextView
+                    android:background="@color/black_A1A1A1"
+                    android:text="▼"
+                    android:gravity="center"
+                    android:ems="2"
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent" />
+
+            </LinearLayout>
+
+            <android.support.v7.widget.AppCompatEditText
+                android:layout_marginTop="@dimen/px20"
+                app:layout_constraintTop_toBottomOf="@id/ly_logistics"
+                android:id="@+id/et_order_number"
+                android:inputType="phone"
+                android:hint="@string/return_goods_order"
+                android:drawableRight="@mipmap/my_icon_scan"
+                android:padding="@dimen/px20"
+                android:layout_width="match_parent"
+                android:background="@color/white"
+                android:visibility="gone"
+                style="@style/Tv12black" />
+
+            <LinearLayout
+                android:visibility="gone"
+                android:id="@+id/ly_price"
+                android:layout_marginTop="@dimen/px20"
+                app:layout_constraintTop_toBottomOf="@+id/et_order_number"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal">
+
+                <TextView
+                    android:visibility="visible"
+                    android:layout_marginTop="@dimen/px20"
+                    app:layout_constraintTop_toBottomOf="@id/ly_logistics"
+                    android:text="输入退款金额:"
+                    style="@style/Tv12black" />
+                
+                <android.support.v7.widget.AppCompatEditText
+                    android:id="@+id/et_price"
+                    android:layout_marginLeft="@dimen/px10"
+                    android:layout_marginRight="@dimen/px10"
+                    android:padding="@dimen/px10"
+                    android:inputType="numberDecimal"
+                    android:minEms="5"
+                    android:ellipsize="end"
+                    android:textSize="@dimen/size24"
+                    android:layout_gravity="bottom"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:background="@color/white"/>
+
+                <TextView
+                    android:visibility="visible"
+                    android:layout_marginTop="@dimen/px20"
+                    app:layout_constraintTop_toBottomOf="@id/ly_logistics"
+                    android:text="元"
+                    style="@style/Tv12black" />
+                
+            </LinearLayout>
+
+            <TextView
+                android:id="@+id/tv_text"
+                android:visibility="gone"
+                android:layout_marginTop="@dimen/px20"
+                app:layout_constraintTop_toBottomOf="@id/ly_price"
+                android:text="xxx"
+                style="@style/Tv12black" />
+
+            <android.support.v7.widget.RecyclerView
+                android:id="@+id/recyclerView"
+                android:visibility="gone"
+                android:layout_marginTop="@dimen/px30"
+                app:layout_constraintTop_toBottomOf="@+id/tv_text"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content" />
+
+            <com.flyco.roundview.RoundTextView
+                android:id="@+id/tv_confirm"
+                app:layout_constraintBottom_toBottomOf="parent"
+                android:layout_marginBottom="@dimen/px50"
+                style="@style/RoundBlueTextView"
+                android:text="@string/return_submit"
+                app:rv_backgroundColor="@color/reb_FE2701"
+                app:rv_backgroundPressColor="@color/reb_C91E00"  />
+
+        </android.support.constraint.ConstraintLayout>
+
+        </android.support.v4.widget.NestedScrollView>
+
+    </LinearLayout>
+
+</layout>

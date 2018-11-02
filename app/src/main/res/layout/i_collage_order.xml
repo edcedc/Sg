@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:background="?attr/selectableItemBackground"
+    android:padding="@dimen/px20">
+
+    <ImageView
+        android:id="@+id/iv_head"
+        android:scaleType="fitXY"
+        android:layout_width="@dimen/px116"
+        android:layout_height="@dimen/px116"
+        android:src="@mipmap/place_holder_user" />
+
+    <TextView
+        android:id="@+id/tv_name"
+        style="@style/Tv12black"
+        android:layout_marginLeft="@dimen/px20"
+        android:text="xxxx"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintLeft_toRightOf="@+id/iv_head"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <LinearLayout
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        android:layout_marginRight="@dimen/px20"
+        app:layout_constraintEnd_toStartOf="@id/tv_join_group"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="vertical">
+
+        <TextView
+            android:id="@+id/tv_user_number"
+            style="@style/Tv12black"   />
+
+        <TextView
+            android:textColor="@color/black_A1A1A1"
+            android:id="@+id/tv_time"
+            style="@style/Tv12black"   />
+
+    </LinearLayout>
+
+    <com.flyco.roundview.RoundTextView
+        android:id="@+id/tv_join_group"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:ems="3"
+        android:gravity="center"
+        android:paddingBottom="@dimen/px10"
+        android:paddingTop="@dimen/px10"
+        android:text="@string/join_group"
+        android:textColor="@color/white"
+        android:textSize="@dimen/size24"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:rv_backgroundColor="@color/reb_FE2701"
+        app:rv_cornerRadius="@dimen/px10" />
+
+</android.support.constraint.ConstraintLayout>

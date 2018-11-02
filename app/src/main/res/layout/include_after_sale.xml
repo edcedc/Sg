@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:orientation="horizontal"
+    android:gravity="center"
+    android:background="@color/white"
+    android:paddingLeft="@dimen/px30"
+    android:layout_height="wrap_content">
+
+    <CheckBox
+        android:id="@+id/cb_totla"
+        android:layout_marginLeft="@dimen/size30"
+        android:padding="@dimen/size30"
+        android:button="@drawable/cb_cart"
+        android:background="@null"
+        android:text="@string/total_selection"
+        style="@style/Tv15black"
+        android:textSize="@dimen/size28_"/>
+
+    <TextView
+        android:id="@+id/tv_settlement"
+        style="@style/Tv12black"
+        android:layout_height="0dp"
+        android:background="@color/reb_FE2701"
+        android:minEms="5"
+        android:maxEms="15"
+        android:text="@string/complete2"
+        android:paddingLeft="@dimen/px20"
+        android:paddingRight="@dimen/px20"
+        android:gravity="center"
+        android:textColor="@color/white"
+        android:textSize="@dimen/size28"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toTopOf="parent"  />
+
+</android.support.constraint.ConstraintLayout>

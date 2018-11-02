@@ -1,0 +1,176 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:background="?attr/selectableItemBackground"
+    android:orientation="vertical">
+
+    <android.support.constraint.ConstraintLayout
+        android:id="@+id/constraintLayout"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:paddingBottom="10dp"
+        android:paddingRight="10dp">
+
+        <ImageView
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            android:id="@+id/iv_img"
+            android:layout_width="70dp"
+            android:layout_height="70dp"
+            android:layout_margin="10dp"
+            android:scaleType="fitXY"
+            android:src="@mipmap/place_holder" />
+
+        <TextView
+            android:layout_marginLeft="10dp"
+            app:layout_constraintTop_toTopOf="parent"
+            android:id="@+id/tv_name"
+            style="@style/Tv15black"
+            android:ellipsize="end"
+            app:layout_constraintBottom_toTopOf="@+id/tv_discount"
+            android:maxLines="2"
+            android:text="xxxxxxx"
+            android:textSize="@dimen/size26"
+            app:layout_constraintStart_toEndOf="@+id/iv_img"  />
+
+        <com.flyco.roundview.RoundTextView
+            android:layout_marginLeft="10dp"
+            android:layout_marginTop="10dp"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/tv_name"
+            app:layout_constraintStart_toEndOf="@+id/iv_img"
+            android:id="@+id/tv_discount"
+            style="@style/Tv12Reb"
+            android:paddingLeft="5dp"
+            android:paddingRight="5dp"
+            android:text="xxx"
+            android:textSize="@dimen/size16"
+            app:rv_strokeColor="@color/reb_FE2701"
+            app:rv_strokeWidth="1dp" />
+
+        <TextView
+            android:layout_marginLeft="10dp"
+            android:id="@+id/tv_class"
+            style="@style/Tv12Reb"
+            android:text="xxxx"
+            app:layout_constraintStart_toEndOf="@+id/iv_img"
+            app:layout_constraintTop_toBottomOf="@+id/tv_discount"
+            android:textColor="@color/black_A1A1A1" />
+
+        <TextView
+            android:id="@+id/tv_price"
+            style="@style/Tv15black"
+            android:text="xxx"
+            android:textSize="@dimen/size26"
+            app:layout_constraintBottom_toTopOf="@+id/tv_discount"
+            app:layout_constraintRight_toRightOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <TextView
+            android:layout_marginTop="10dp"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintBottom_toBottomOf="parent"
+            android:id="@+id/tv_number"
+            style="@style/Tv12Reb"
+            android:text="xxx"
+            android:textColor="@color/black_A1A1A1"
+            app:layout_constraintRight_toRightOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/tv_price" />
+
+    </android.support.constraint.ConstraintLayout>
+
+    <LinearLayout
+        android:id="@+id/ly_price"
+        android:visibility="gone"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical">
+
+        <View style="@style/divider_1" />
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="right"
+            android:orientation="horizontal"
+            android:padding="@dimen/px30">
+
+            <TextView
+                android:id="@+id/tv_allNumber"
+                style="@style/Tv12black"
+                android:layout_marginRight="@dimen/px40"
+                android:text="xxxxxxxx" />
+
+            <TextView
+                android:id="@+id/tv_allPrice"
+                style="@style/Tv12Reb"
+                android:text="xxxxx" />
+
+        </LinearLayout>
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/ly_button"
+        android:visibility="gone"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical">
+
+        <View style="@style/divider_1" />
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="right"
+            android:orientation="horizontal">
+
+            <com.flyco.roundview.RoundTextView
+                android:id="@+id/tv_confirm2"
+                style="@style/Tv12Reb"
+                android:layout_margin="@dimen/px20"
+                android:gravity="center"
+                android:minEms="5"
+                android:paddingBottom="@dimen/px10"
+                android:paddingTop="@dimen/px10"
+                android:text="查看物流"
+                android:textColor="@color/gray"
+                app:rv_backgroundColor="@color/white"
+                app:rv_cornerRadius="@dimen/px30"
+                app:rv_strokeColor="@color/gray"
+                app:rv_strokeWidth="@dimen/px2" />
+
+            <com.flyco.roundview.RoundTextView
+                android:id="@+id/tv_confirm"
+                style="@style/Tv12Reb"
+                android:layout_margin="@dimen/px20"
+                android:gravity="center"
+                android:minEms="5"
+                android:paddingBottom="@dimen/px10"
+                android:paddingTop="@dimen/px10"
+                android:text="待付款"
+                android:textColor="@color/white"
+                app:rv_backgroundColor="@color/reb_FE2701"
+                app:rv_cornerRadius="@dimen/px30" />
+
+        </LinearLayout>
+
+    </LinearLayout>
+
+    <View style="@style/divider_1" />
+
+    <GridView
+        android:id="@+id/gridView"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:numColumns="3"
+        android:visibility="gone"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/view3" />
+
+
+
+</LinearLayout>

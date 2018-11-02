@@ -1,0 +1,105 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <data>
+
+    </data>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@color/white_f4f4f4"
+        android:orientation="vertical">
+
+        <include layout="@layout/include_top" />
+
+        <FrameLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@color/white_f4f4f4"
+            android:paddingBottom="@dimen/px20"
+            android:paddingLeft="@dimen/px20"
+            android:paddingRight="@dimen/px20"
+            android:paddingTop="@dimen/px10">
+
+            <com.flyco.roundview.RoundLinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:gravity="center"
+                android:orientation="vertical"
+                app:rv_backgroundColor="@color/white"
+                app:rv_cornerRadius="@dimen/px10">
+
+                <TextView
+                    android:text="@string/cumulative_income"
+                    android:id="@+id/tv_title"
+                    style="@style/Tv15black"
+                    android:layout_marginTop="@dimen/px20" />
+
+                <TextView
+                    android:text="0"
+                    android:id="@+id/tv_price"
+                    style="@style/Tv15Reb"
+                    android:layout_marginTop="@dimen/px30"
+                    android:textSize="@dimen/size40" />
+
+                <com.flyco.roundview.RoundLinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/px40"
+                    android:orientation="horizontal">
+
+                    <com.flyco.roundview.RoundTextView
+                        android:id="@+id/tv_posters"
+                        style="@style/Tv15black"
+                        android:layout_width="0dp"
+                        android:layout_weight="1"
+                        android:gravity="center"
+                        android:padding="@dimen/px20"
+                        android:text="@string/create_posters"
+                        app:rv_backgroundColor="@color/black_E5E5E5"
+                        app:rv_cornerRadius_BL="@dimen/px10" />
+
+                    <com.flyco.roundview.RoundTextView
+                        android:id="@+id/tv_rules"
+                        style="@style/Tv15black"
+                        android:layout_width="0dp"
+                        android:layout_weight="1"
+                        android:gravity="center"
+                        android:padding="@dimen/px20"
+                        android:text="@string/distribution_rules"
+                        app:rv_backgroundColor="@color/black_E5E5E5"
+                        app:rv_cornerRadius_BR="@dimen/px10" />
+
+                </com.flyco.roundview.RoundLinearLayout>
+
+            </com.flyco.roundview.RoundLinearLayout>
+
+        </FrameLayout>
+
+        <com.ganxin.library.LoadDataLayout
+            android:id="@+id/swipeLoadDataLayout"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <com.lcodecore.tkrefreshlayout.TwinklingRefreshLayout
+                android:id="@+id/refreshLayout"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:background="@color/white_f4f4f4">
+
+                <android.support.v7.widget.RecyclerView
+                    android:id="@+id/recyclerView"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:nestedScrollingEnabled="false"
+                    android:overScrollMode="never" />
+
+            </com.lcodecore.tkrefreshlayout.TwinklingRefreshLayout>
+
+        </com.ganxin.library.LoadDataLayout>
+
+    </LinearLayout>
+
+</layout>

@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="utf-8"?>
+<com.fanwang.sg.weight.WithScrollListView
+    android:id="@+id/listView"
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:dividerHeight="@dimen/px5"
+    android:divider="@color/white_f4f4f4"
+    android:layout_height="wrap_content">
+
+</com.fanwang.sg.weight.WithScrollListView>

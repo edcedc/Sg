@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <string name="app_name">SealTalk</string>
+    <string name="de_actionbar_sub_system">"System Message"</string>
+    <string name="de_actionbar_sub_group">"Group"</string>
+
+
+    <string name="de_actionbar_sub_defult">\"Chat\"</string>
+    <string name="de_actionbar_sub_discussion">\"My discussion\"</string>
+    <string name="de_dialog_item_message_delete">delete message</string>
+    <string name="de_actionbar_sub_private">\"My private conversation\"</string>
+
+    <string name="contact_notification_someone_agree_your_request">%1$s has accepted your friend request.</string>
+    <string name="contact_notification_agree_your_request">The other has agreed your friend request.</string>
+
+</resources>

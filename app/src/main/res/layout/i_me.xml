@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:background="?attr/selectableItemBackground"
+    android:orientation="horizontal">
+
+    <ImageView
+        android:layout_gravity="center"
+        android:id="@+id/iv_img"
+        android:visibility="gone"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="@dimen/px30"
+        android:layout_marginRight="@dimen/px10" />
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical">
+
+        <View
+            android:id="@+id/view"
+            style="@style/divider_1"
+            android:layout_height="@dimen/px20"
+            android:visibility="gone" />
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="center"
+            android:orientation="horizontal"
+            android:paddingBottom="@dimen/px30"
+            android:paddingLeft="@dimen/px20"
+            android:paddingRight="@dimen/px20"
+            android:paddingTop="@dimen/px30">
+
+            <TextView
+                android:id="@+id/tv_title"
+                style="@style/Tv15black"
+                android:layout_weight="1"
+                android:gravity="left"
+                android:text="name" />
+
+            <TextView
+                android:id="@+id/tv_content"
+                android:layout_marginRight="@dimen/px20"
+                android:visibility="invisible"
+                style="@style/Tv12black" />
+
+            <ImageView
+                android:layout_marginRight="@dimen/px10"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:background="@mipmap/my_icon_return" />
+
+        </LinearLayout>
+
+        <View style="@style/divider_1"
+            android:visibility="gone"
+            android:layout_height="@dimen/px5"/>
+
+    </LinearLayout>
+
+</LinearLayout>

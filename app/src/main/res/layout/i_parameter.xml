@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.constraint.ConstraintLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:padding="@dimen/px30"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <TextView
+        android:id="@+id/tv_name"
+        android:minEms="4"
+        android:textColor="@color/black_A1A1A1"
+        style="@style/Tv12black" />
+
+    <TextView
+        app:layout_constraintLeft_toRightOf="@+id/tv_name"
+        android:id="@+id/tv_content"
+        style="@style/Tv12black" />
+
+</android.support.constraint.ConstraintLayout>

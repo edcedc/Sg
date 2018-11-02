@@ -1,0 +1,125 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="vertical">
+
+    <TextView
+        android:visibility="gone"
+        android:id="@+id/tv_frame"
+        android:textColor="@color/white"
+        android:background="@color/black_898989"
+        android:layout_width="match_parent"
+        android:padding="@dimen/px10"
+        android:gravity="center"
+        style="@style/Tv12black" />
+
+    <View style="@style/divider_dropshadow" />
+
+    <android.support.constraint.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <TextView
+            android:id="@+id/tv_collection"
+            style="@style/Tv12black"
+            android:drawablePadding="@dimen/px5"
+            android:drawableTop="@mipmap/home_icon_collection_default"
+            android:padding="@dimen/px20"
+            android:text="收藏"
+            android:textColor="@color/black_A1A1A1" />
+
+        <TextView
+            android:layout_marginLeft="@dimen/px10"
+            android:id="@+id/tv_share"
+            style="@style/Tv12black"
+            android:drawablePadding="@dimen/px5"
+            android:drawableTop="@mipmap/home_icon_share"
+            android:padding="@dimen/px20"
+            android:text="@string/share"
+            android:textColor="@color/black_A1A1A1"
+            app:layout_constraintLeft_toRightOf="@+id/tv_collection" />
+
+        <TextView
+            android:layout_marginLeft="@dimen/px10"
+            android:id="@+id/tv_customer"
+            style="@style/Tv12black"
+            android:drawablePadding="@dimen/px5"
+            android:drawableTop="@mipmap/home_icon_customerservice"
+            android:padding="@dimen/px20"
+            android:text="@string/online_service2"
+            android:textColor="@color/black_A1A1A1"
+            app:layout_constraintLeft_toRightOf="@+id/tv_share" />
+
+        <com.flyco.roundview.RoundTextView
+            android:id="@+id/tv_add_cart"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:minEms="7"
+            android:gravity="center"
+            android:padding="@dimen/px20"
+            android:text="@string/add_cart"
+            android:textColor="@color/white"
+            android:textSize="@dimen/size22"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toStartOf="@id/tv_purchase"
+            app:layout_constraintLeft_toRightOf="@+id/tv_customer"
+            app:layout_constraintTop_toTopOf="parent"
+            app:rv_backgroundColor="@color/reb_FE2701"
+            app:rv_cornerRadius_BL="@dimen/px30"
+            app:rv_cornerRadius_TL="@dimen/px30" />
+
+        <com.flyco.roundview.RoundTextView
+            android:id="@+id/tv_purchase"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginRight="@dimen/px20"
+            android:minEms="7"
+            android:gravity="center"
+            android:padding="@dimen/px20"
+            android:text="@string/purchase_immediately"
+            android:textColor="@color/white"
+            android:textSize="@dimen/size22"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintLeft_toRightOf="@+id/tv_add_cart"
+            app:layout_constraintTop_toTopOf="parent"
+            app:rv_backgroundColor="@color/reb_FF4E2F"
+            app:rv_cornerRadius_BR="@dimen/px30"
+            app:rv_cornerRadius_TR="@dimen/px30" />
+
+        <android.support.constraint.Group
+            android:id="@+id/gp_add_cart"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:visibility="gone"
+            app:constraint_referenced_ids="tv_add_cart, tv_purchase"/>
+
+        <com.flyco.roundview.RoundTextView
+            android:id="@+id/tv_robbing"
+            app:layout_constraintRight_toRightOf="parent"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginRight="@dimen/px20"
+            android:ems="6"
+            android:gravity="center"
+            android:padding="@dimen/px20"
+            android:text="@string/forthcoming_robbing"
+            android:textColor="@color/white"
+            android:textSize="@dimen/size22"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:rv_backgroundColor="@color/reb_FE2701"
+            app:rv_cornerRadius="@dimen/px30"/>
+
+        <android.support.constraint.Group
+            android:id="@+id/gp_robbing"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:visibility="gone"
+            app:constraint_referenced_ids="tv_robbing"/>
+
+    </android.support.constraint.ConstraintLayout>
+
+</LinearLayout>

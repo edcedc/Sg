@@ -1,0 +1,115 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical">
+
+    <android.support.constraint.ConstraintLayout
+        android:id="@+id/cl_yout"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="@dimen/px70"
+        android:layout_marginRight="@dimen/px70"
+        android:layout_marginTop="@dimen/px150"
+        android:background="@color/white"
+        android:paddingBottom="@dimen/px30">
+
+        <ImageView
+            android:id="@+id/iv_img"
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/px300"
+            android:scaleType="fitXY"
+            android:src="@mipmap/place_holder" />
+
+        <FrameLayout
+            android:id="@+id/fy_close"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:padding="@dimen/px30"
+            app:layout_constraintRight_toRightOf="parent">
+
+            <ImageView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:background="@mipmap/home_icon_cancel" />
+
+        </FrameLayout>
+
+        <View
+            android:id="@+id/view"
+            style="@style/divider_1"
+            app:layout_constraintTop_toBottomOf="@id/iv_img" />
+
+        <TextView
+            android:id="@+id/tv_name"
+            style="@style/Tv15black"
+            android:layout_margin="@dimen/px20"
+            android:text="xxxxx"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/view" />
+
+        <TextView
+            android:id="@+id/tv_price"
+            style="@style/Tv12Reb"
+            android:layout_marginLeft="@dimen/px20"
+            android:layout_marginTop="@dimen/px10"
+            android:text="xxxxx"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/tv_name" />
+
+        <com.fanwang.sg.weight.StrikethroughTextView
+            android:id="@+id/tv_price2"
+            style="@style/Tv12black"
+            android:layout_marginLeft="@dimen/px20"
+            android:text="xxxxxx"
+            app:layout_constraintBottom_toBottomOf="@id/tv_price"
+            app:layout_constraintLeft_toRightOf="@id/tv_price"
+            app:layout_constraintTop_toTopOf="@id/tv_price" />
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/px30"
+            android:gravity="center"
+            android:orientation="vertical"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintRight_toRightOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/tv_price2">
+
+            <ImageView
+                android:id="@+id/iv_zking"
+                android:layout_width="@dimen/px100"
+                android:layout_height="@dimen/px100"
+                android:src="@mipmap/place_holder"
+                android:scaleType="fitXY"
+                app:layout_constraintRight_toRightOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/view" />
+
+            <TextView
+                style="@style/Tv12black"
+                android:layout_marginTop="@dimen/px10"
+                android:gravity="center"
+                android:text="@string/zking2"
+                app:layout_constraintRight_toRightOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/iv_zking" />
+
+        </LinearLayout>
+
+    </android.support.constraint.ConstraintLayout>
+
+    <com.flyco.roundview.RoundTextView
+        android:id="@+id/tv_confirm"
+        style="@style/RoundBlueTextView"
+        android:text="@string/complete2"
+        android:layout_width="200dp"
+        android:layout_marginTop="@dimen/px30"
+        app:rv_backgroundColor="@color/reb_FE2701"
+        app:rv_backgroundPressColor="@color/reb_C91E00" />
+
+    <View
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:layout_weight="1"/>
+
+</LinearLayout>

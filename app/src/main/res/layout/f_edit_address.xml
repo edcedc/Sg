@@ -1,0 +1,157 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <data>
+
+    </data>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@color/white_f4f4f4"
+        android:orientation="vertical">
+
+        <include layout="@layout/include_top" />
+
+        <android.support.constraint.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@color/white">
+
+            <TextView
+                android:id="@+id/tv_name"
+                style="@style/Tv15black"
+                android:layout_margin="@dimen/px30"
+                android:text="@string/name_receiving"
+                app:layout_constraintLeft_toLeftOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <EditText
+                android:id="@+id/et_name"
+                style="@style/Tv15black"
+                android:layout_width="0dp"
+                android:layout_margin="@dimen/px30"
+                android:background="@null"
+                android:hint="@string/please_name_receiving"
+                android:inputType="text"
+                android:textColor="@color/black_A1A1A1"
+                app:layout_constraintLeft_toRightOf="@+id/tv_name"
+                app:layout_constraintRight_toRightOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <View
+                android:id="@+id/view"
+                style="@style/divider_1"
+                android:layout_marginTop="@dimen/px30"
+                app:layout_constraintTop_toBottomOf="@+id/et_name" />
+
+            <TextView
+                android:id="@+id/tv_phone"
+                style="@style/Tv15black"
+                android:layout_margin="@dimen/px30"
+                android:text="@string/phone_receiving"
+                app:layout_constraintLeft_toLeftOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/view" />
+
+            <EditText
+                android:id="@+id/et_phone"
+                style="@style/Tv15black"
+                android:layout_width="0dp"
+                android:layout_margin="@dimen/px30"
+                android:background="@null"
+                android:hint="@string/please_phone_receiving"
+                android:inputType="phone"
+                android:maxLength="11"
+                android:textColor="@color/black_A1A1A1"
+                app:layout_constraintLeft_toRightOf="@+id/tv_phone"
+                app:layout_constraintRight_toRightOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/view" />
+
+            <View
+                android:id="@+id/view1"
+                style="@style/divider_1"
+                android:layout_marginTop="@dimen/px30"
+                app:layout_constraintTop_toBottomOf="@+id/et_phone" />
+
+            <TextView
+                android:id="@+id/tv_address"
+                style="@style/Tv15black"
+                android:layout_margin="@dimen/px30"
+                android:text="@string/address_receiving"
+                app:layout_constraintLeft_toLeftOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/view1" />
+
+            <EditText
+                android:id="@+id/et_address"
+                style="@style/Tv15black"
+                android:layout_width="0dp"
+                android:layout_margin="@dimen/px30"
+                android:background="@null"
+                android:hint="@string/please_address_receiving"
+                android:longClickable="false"
+                android:textIsSelectable="false"
+                android:focusable="false"
+                android:textColor="@color/black_A1A1A1"
+                app:layout_constraintLeft_toRightOf="@+id/tv_address"
+                app:layout_constraintRight_toRightOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/view1" />
+
+            <View
+                android:id="@+id/view2"
+                style="@style/divider_1"
+                android:layout_marginTop="@dimen/px30"
+                app:layout_constraintTop_toBottomOf="@+id/et_address" />
+
+
+            <TextView
+                android:id="@+id/tv_detailed_address"
+                style="@style/Tv15black"
+                android:layout_margin="@dimen/px30"
+                android:text="@string/detailed_address"
+                app:layout_constraintLeft_toLeftOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/view2" />
+
+            <EditText
+                android:id="@+id/et_detailed_address"
+                style="@style/Tv15black"
+                android:layout_width="0dp"
+                android:background="@null"
+                android:gravity="top"
+                android:hint="@string/please_detailed_address"
+                android:maxLines="5"
+                android:minLines="4"
+                android:padding="@dimen/px30"
+                android:textColor="@color/black_A1A1A1"
+                app:layout_constraintLeft_toRightOf="@+id/tv_detailed_address"
+                app:layout_constraintRight_toRightOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/view2" />
+
+            <View
+                style="@style/divider_1"
+                android:layout_marginTop="@dimen/px30"
+                app:layout_constraintTop_toBottomOf="@+id/et_detailed_address" />
+
+            <android.support.constraint.Group
+                android:id="@+id/gp_address"
+                app:constraint_referenced_ids="tv_name, tv_phone, tv_address, tv_detailed_address"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content" />
+
+        </android.support.constraint.ConstraintLayout>
+
+        <View
+            android:layout_width="0.1dp"
+            android:layout_height="0.1dp"
+            android:layout_weight="1" />
+
+        <com.flyco.roundview.RoundTextView
+            android:id="@+id/tv_confirm"
+            style="@style/RoundBlueTextView"
+            android:text="@string/add_bank3"
+            app:rv_backgroundColor="@color/reb_FE2701"
+            app:rv_backgroundPressColor="@color/reb_C91E00" />
+
+    </LinearLayout>
+
+</layout>

@@ -1,0 +1,76 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <data>
+
+    </data>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical">
+
+        <include layout="@layout/include_top" />
+
+        <com.ganxin.library.LoadDataLayout
+            android:id="@+id/swipeLoadDataLayout"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <android.support.constraint.ConstraintLayout
+                android:background="@color/white"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent">
+
+                <ImageView
+                    android:id="@+id/iv_img"
+                    android:layout_width="@dimen/px135"
+                    android:layout_height="@dimen/px135"
+                    android:layout_margin="@dimen/px30"
+                    android:scaleType="fitXY"
+                    android:src="@mipmap/place_holder"
+                    app:layout_constraintLeft_toLeftOf="parent"
+                    app:layout_constraintTop_toTopOf="parent" />
+
+                <TextView
+                    android:id="@+id/tv_name"
+                    style="@style/Tv15black"
+                    android:layout_marginLeft="@dimen/px30"
+                    android:text="xxxx"
+                    app:layout_constraintBottom_toTopOf="@+id/tv_number"
+                    app:layout_constraintLeft_toRightOf="@+id/iv_img"
+                    app:layout_constraintTop_toTopOf="@+id/iv_img" />
+
+                <TextView
+                    android:id="@+id/tv_number"
+                    style="@style/Tv15black"
+                    android:layout_marginLeft="@dimen/px30"
+                    android:text="xxxx"
+                    app:layout_constraintBottom_toBottomOf="@+id/iv_img"
+                    app:layout_constraintLeft_toRightOf="@+id/iv_img"
+                    app:layout_constraintTop_toBottomOf="@+id/tv_name" />
+
+                <View
+                    android:id="@+id/view"
+                    style="@style/divider_1"
+                    android:layout_height="@dimen/px10"
+                    android:layout_marginTop="@dimen/px30"
+                    app:layout_constraintTop_toBottomOf="@+id/iv_img" />
+
+                <android.support.v7.widget.RecyclerView
+                    android:id="@+id/recyclerView"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:nestedScrollingEnabled="false"
+                    android:overScrollMode="never"
+                    app:layout_constraintTop_toBottomOf="@+id/view" />
+
+            </android.support.constraint.ConstraintLayout>
+
+        </com.ganxin.library.LoadDataLayout>
+
+    </LinearLayout>
+
+
+</layout>

@@ -1,0 +1,77 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/ly_search"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:background="@color/white_fff7f8f8"
+    android:gravity="center"
+    android:orientation="horizontal"
+    android:padding="@dimen/px20">
+
+    <FrameLayout
+        android:visibility="gone"
+        android:id="@+id/fy_close"
+        android:paddingRight="@dimen/px20"
+        android:paddingLeft="@dimen/px20"
+        android:layout_width="wrap_content"
+        android:layout_height="match_parent">
+
+        <ImageView
+            android:layout_gravity="center"
+            android:background="@mipmap/close"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content" />
+
+    </FrameLayout>
+
+    <com.flyco.roundview.RoundLinearLayout
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="@dimen/px10"
+        android:layout_weight="1"
+        android:gravity="center"
+        app:rv_backgroundColor="@color/white"
+        app:rv_cornerRadius="@dimen/px10">
+
+        <ImageView
+            android:layout_width="@dimen/px26"
+            android:layout_height="@dimen/px26"
+            android:layout_marginRight="@dimen/px10"
+            android:layout_marginLeft="@dimen/px10"
+            android:background="@mipmap/home_icon_search" />
+
+        <EditText
+            android:id="@+id/et_searh"
+            android:imeOptions="actionSearch"
+            android:singleLine="true"
+            android:padding="@dimen/px20"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@null"
+            android:hint="@string/home_keyword"
+            android:textSize="@dimen/size24_" />
+
+    </com.flyco.roundview.RoundLinearLayout>
+
+    <com.fanwang.sg.weight.MessageView
+        android:id="@+id/iv_search_img"
+        android:visibility="gone"
+        android:layout_width="wrap_content"
+        android:layout_marginLeft="@dimen/px40"
+        android:layout_marginRight="@dimen/px20"
+        android:layout_height="wrap_content" />
+    
+    <TextView
+        android:id="@+id/tv_cancel"
+        android:gravity="center"
+        android:visibility="gone"
+        android:layout_height="match_parent"
+        android:paddingLeft="@dimen/px40"
+        android:paddingRight="@dimen/px20"
+        android:text="@string/cancel"
+        android:textColor="@color/black_898989"
+        style="@style/Tv12black" />
+
+</LinearLayout>
+

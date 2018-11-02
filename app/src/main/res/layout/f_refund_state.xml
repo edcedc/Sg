@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <data>
+
+    </data>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@color/white_f4f4f4"
+        android:orientation="vertical">
+
+        <include layout="@layout/include_top"/>
+
+        <View
+            style="@style/divider_1"
+            android:layout_height="@dimen/px10"/>
+
+        <android.support.constraint.ConstraintLayout
+            android:layout_width="match_parent"
+            android:background="@color/white"
+            android:layout_height="wrap_content">
+
+            <TextView
+                android:id="@+id/tv_return"
+                android:background="?attr/selectableItemBackground"
+                android:layout_width="match_parent"
+                android:padding="@dimen/px20"
+                android:drawableRight="@mipmap/my_icon_return"
+                android:text="@string/top_return_goods"
+                style="@style/Tv15black" />
+
+            <View
+                android:id="@+id/view"
+                app:layout_constraintTop_toBottomOf="@+id/tv_return"
+                style="@style/divider_1"/>
+
+            <TextView
+                app:layout_constraintTop_toBottomOf="@+id/view"
+                android:id="@+id/tv_return_goods"
+                android:background="?attr/selectableItemBackground"
+                android:layout_width="match_parent"
+                android:padding="@dimen/px20"
+                android:drawableRight="@mipmap/my_icon_return"
+                android:text="@string/top_return_goods2"
+                style="@style/Tv15black" />
+
+        </android.support.constraint.ConstraintLayout>
+
+
+    </LinearLayout>
+
+
+</layout>

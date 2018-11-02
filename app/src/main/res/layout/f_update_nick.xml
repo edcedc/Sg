@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <data>
+
+    </data>
+
+    <LinearLayout
+        android:background="@color/white_f4f4f4"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical">
+
+        <include layout="@layout/include_top"/>
+
+        <android.support.constraint.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <com.flyco.roundview.RoundFrameLayout
+                android:id="@+id/ly_edit"
+                android:layout_marginTop="@dimen/px15"
+                android:layout_marginLeft="@dimen/px30"
+                android:layout_marginRight="@dimen/px30"
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintLeft_toLeftOf="parent"
+                app:layout_constraintRight_toRightOf="parent"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                app:rv_cornerRadius="@dimen/px10"
+                app:rv_backgroundColor="@color/white">
+
+                <EditText
+                    android:singleLine="true"
+                    android:id="@+id/et_edit"
+                    android:padding="@dimen/px20"
+                    style="@style/Tv15black"
+                    android:background="@null"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content" />
+
+            </com.flyco.roundview.RoundFrameLayout>
+
+            <TextView
+                android:layout_marginTop="@dimen/px20"
+                android:layout_marginLeft="@dimen/px30"
+                app:layout_constraintLeft_toLeftOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/ly_edit"
+                android:textColor="@color/black_A1A1A1"
+                android:text="@string/nick2"
+                style="@style/Tv12Reb" />
+
+        </android.support.constraint.ConstraintLayout>
+
+    </LinearLayout>
+
+
+</layout>
