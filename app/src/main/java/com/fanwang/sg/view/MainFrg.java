@@ -60,10 +60,14 @@ public class MainFrg extends BaseFragment<BasePresenter, FMainBinding> implement
     protected void initView(View view) {
 
         mB.bottomBar
-                .addItem(new BottomBarTab(_mActivity, R.mipmap.home_icon_home_selected, "首页"))
-                .addItem(new BottomBarTab(_mActivity, R.mipmap.home_icon_classification_selected, "分类"))
-                .addItem(new BottomBarTab(_mActivity, R.mipmap.home_icon_shopcart_selected, "购物车"))
-                .addItem(new BottomBarTab(_mActivity, R.mipmap.home_icon_my_selected, "我的"));
+                .addItem(new BottomBarTab(_mActivity, R.mipmap.home_icon_home_default, "首页"))
+                .addItem(new BottomBarTab(_mActivity, R.mipmap.home_icon_classification_default, "分类"))
+                .addItem(new BottomBarTab(_mActivity, R.mipmap.home_icon_shopcart_default, "购物车"))
+                .addItem(new BottomBarTab(_mActivity, R.mipmap.home_icon_my_default, "我的"));
+//                .addItem(new BottomBarTab(_mActivity, R.mipmap.home_icon_home_selected, "首页"))
+//                .addItem(new BottomBarTab(_mActivity, R.mipmap.home_icon_classification_selected, "分类"))
+//                .addItem(new BottomBarTab(_mActivity, R.mipmap.home_icon_shopcart_selected, "购物车"))
+//                .addItem(new BottomBarTab(_mActivity, R.mipmap.home_icon_my_selected, "我的"));
         mB.bottomBar.setOnTabSelectedListener(new BottomBar.OnTabSelectedListener() {
             @Override
             public void onTabSelected(int position, int prePosition) {

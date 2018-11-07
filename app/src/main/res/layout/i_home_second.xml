@@ -20,15 +20,15 @@
             android:orientation="horizontal">
 
             <View
-                style="@style/divider_2"/>
+                style="@style/divider_2"
+                android:visibility="gone"/>
 
             <TextView
-                android:layout_marginLeft="@dimen/px20"
                 android:textColor="@color/black"
                 android:text="@string/second_killing_buying"
                 style="@style/Tv15black" />
 
-            <cn.iwgang.countdownview.CountdownView
+            <!--<cn.iwgang.countdownview.CountdownView
                 android:id="@+id/tv_time"
                 android:layout_width="match_parent"
                 android:layout_height="20dp"
@@ -48,6 +48,27 @@
                 app:suffixTextColor="@color/reb_FE2701"
                 app:suffixTextSize="@dimen/size24"
                 app:timeTextColor="@color/reb_FE2701"
+                app:timeTextSize="@dimen/size24"/>-->
+
+            <cn.iwgang.countdownview.CountdownView
+                android:id="@+id/tv_time"
+                android:layout_width="wrap_content"
+                android:layout_gravity="center_vertical"
+                android:layout_height="20dp"
+                android:layout_marginLeft="@dimen/px40"
+                app:isHideTimeBackground="false"
+                app:isShowDay="false"
+                app:isShowHour="true"
+                app:isShowMillisecond="false"
+                app:isShowMinute="true"
+                app:isShowSecond="true"
+                app:suffixGravity="center"
+                app:suffixTextColor="#000000"
+                app:suffixTextSize="14sp"
+                app:timeBgDivisionLineSize="1dp"
+                app:timeBgRadius="1dp"
+                app:timeBgSize="@dimen/px34"
+                app:timeTextColor="#FFFFFF"
                 app:timeTextSize="@dimen/size24"/>
 
         </LinearLayout>

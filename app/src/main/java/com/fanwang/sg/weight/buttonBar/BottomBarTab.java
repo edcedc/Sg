@@ -16,6 +16,7 @@ import android.widget.ImageView;
 import android.widget.LinearLayout;
 import android.widget.TextView;
 
+import com.blankj.utilcode.util.LogUtils;
 import com.fanwang.sg.R;
 
 
@@ -63,7 +64,7 @@ public class BottomBarTab extends FrameLayout {
         mIcon.setImageResource(icon);
         params.topMargin = dip2px(context, 3);
         mIcon.setLayoutParams(params);
-        mIcon.setColorFilter(ContextCompat.getColor(context, R.color.tab_unselect));
+//        mIcon.setColorFilter(ContextCompat.getColor(context, R.color.tab_gray));
         lLContainer.addView(mIcon);
 
         mTvTitle = new TextView(context);
@@ -71,7 +72,7 @@ public class BottomBarTab extends FrameLayout {
         LinearLayout.LayoutParams paramsTv = new LinearLayout.LayoutParams(ViewGroup.LayoutParams.WRAP_CONTENT, ViewGroup.LayoutParams.WRAP_CONTENT);
         paramsTv.topMargin = (int) TypedValue.applyDimension(TypedValue.COMPLEX_UNIT_DIP, 2, getResources().getDisplayMetrics());
         mTvTitle.setTextSize(10);
-        mTvTitle.setTextColor(ContextCompat.getColor(context, R.color.tab_unselect));
+        mTvTitle.setTextColor(ContextCompat.getColor(context, R.color.tab_gray));
         mTvTitle.setLayoutParams(paramsTv);
         lLContainer.addView(mTvTitle);
 
@@ -98,12 +99,29 @@ public class BottomBarTab extends FrameLayout {
     @Override
     public void setSelected(boolean selected) {
         super.setSelected(selected);
+        //不清楚之前为啥这样设置背景图
+        LogUtils.e("mTabPosition:" + mTabPosition);
+        LogUtils.e("selected:" + selected);
+        switch (mTabPosition){
+            case 0:
+                mIcon.setImageResource(selected? R.mipmap.home_icon_home_selected : R.mipmap.home_icon_home_default);
+                break;
+            case 1:
+                mIcon.setImageResource(selected? R.mipmap.home_icon_classification_selected : R.mipmap.home_icon_classification_default);
+                break;
+            case 2:
+                mIcon.setImageResource(selected? R.mipmap.home_icon_shopcart_selected : R.mipmap.home_icon_shopcart_default);
+                break;
+            case 3:
+                mIcon.setImageResource(selected? R.mipmap.home_icon_my_selected : R.mipmap.home_icon_my_default);
+                break;
+        }
         if (selected) {
-            mIcon.setColorFilter(ContextCompat.getColor(mContext, R.color.reb_FE2701));
-            mTvTitle.setTextColor(ContextCompat.getColor(mContext, R.color.reb_FE2701));
+//            mIcon.setColorFilter(ContextCompat.getColor(mContext, R.color.tab_black));
+            mTvTitle.setTextColor(ContextCompat.getColor(mContext, R.color.tab_black));
         } else {
-            mIcon.setColorFilter(ContextCompat.getColor(mContext, R.color.tab_unselect));
-            mTvTitle.setTextColor(ContextCompat.getColor(mContext, R.color.tab_unselect));
+//            mIcon.setColorFilter(ContextCompat.getColor(mContext, R.color.tab_gray));
+            mTvTitle.setTextColor(ContextCompat.getColor(mContext, R.color.tab_gray));
         }
     }
 

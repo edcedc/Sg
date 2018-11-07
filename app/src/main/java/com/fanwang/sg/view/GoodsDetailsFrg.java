@@ -294,20 +294,26 @@ public class GoodsDetailsFrg extends BaseFragment<GoodsDetailsPresenter, FGoodsD
         listBean.add(submitOrderBean);
 
         List<DataBean> prodImageList = bean.getProdImageList();
-        if (prodImageList != null && prodImageList.size() != 0) {
-            mB.banner.setAutoPlayAble(prodImageList.size() > 1);
-            mB.banner.setData(prodImageList, new ArrayList<String>());
-            mB.banner.setAdapter(GoodsDetailsFrg.this);
-            mB.banner.getViewTreeObserver().addOnGlobalLayoutListener(new ViewTreeObserver.OnGlobalLayoutListener() {
-                @Override
-                public void onGlobalLayout() {
-                    mB.banner.getViewTreeObserver().removeGlobalOnLayoutListener(this);
-                    ViewGroup.LayoutParams params = mB.banner.getLayoutParams();
-                    params.height = mB.banner.getWidth();
-                    mB.banner.setLayoutParams(params);
-                }
-            });
+        if (prodImageList == null)
+            prodImageList = new ArrayList<>();
+
+        if (prodImageList.size() == 0) {
+            DataBean dataBean = new DataBean();
+            dataBean.setImage("");
+            prodImageList.add(dataBean);
         }
+        mB.banner.setAutoPlayAble(prodImageList.size() > 1);
+        mB.banner.setData(prodImageList, new ArrayList<String>());
+        mB.banner.setAdapter(GoodsDetailsFrg.this);
+        mB.banner.getViewTreeObserver().addOnGlobalLayoutListener(new ViewTreeObserver.OnGlobalLayoutListener() {
+            @Override
+            public void onGlobalLayout() {
+                mB.banner.getViewTreeObserver().removeGlobalOnLayoutListener(this);
+                ViewGroup.LayoutParams params = mB.banner.getLayoutParams();
+                params.height = mB.banner.getWidth();
+                mB.banner.setLayoutParams(params);
+            }
+        });
         String zhekou = bean.getZhekou();
         boolean manjian = bean.isManjian();
         boolean manzeng = bean.isManzeng();

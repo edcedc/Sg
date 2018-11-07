@@ -85,7 +85,9 @@ public class HomeAdapter extends BaseRecyclerviewAdapter<DataBean> implements BG
             LabelViewHolder viewHolder = (LabelViewHolder) holder;
             final List<DataBean> labelList = bean.getLabelList();
             DataBean bean1 = new DataBean();
-            bean1.setName("全部");
+//            bean1.setName("全部");
+//            bean1.setImg(R.mipmap.home_icon_more);
+            bean1.setName("更多");
             bean1.setImg(R.mipmap.home_icon_more);
             labelList.add(bean1);
             HomeLabelAdapter adapter = new HomeLabelAdapter(act, labelList);
@@ -114,16 +116,22 @@ public class HomeAdapter extends BaseRecyclerviewAdapter<DataBean> implements BG
                 long startTime = DateUtils.getSecondsFromDate(TimeUtils.getNowString());//开始时间
                 long endTime = DateUtils.getSecondsFromDate(secKill.getEndTime());//结束时间秒数
                 long timeDelta = DateUtils.getTimeDelta(TimeUtils.getNowString(), secKill.getEndTime());
-                if (timeDelta / 1000 > Constants.day_min){//大于二四小时就显示天
-                    viewHoler.tvTime.customTimeShow(true, true, true, true, false);
-                }
+//                if (timeDelta / 1000 > Constants.day_min){//大于二四小时就显示天
+//                    viewHoler.tvTime.customTimeShow(true, true, true, true, false);
+//                }
                 viewHoler.tvTime.start(timeDelta);
-                viewHoler.tvTime.setOnCountdownEndListener(new CountdownView.OnCountdownEndListener() {
-                    @Override
-                    public void onEnd(CountdownView cv) {
-                        LogUtils.e("onEnd");
-                    }
-                });
+//                viewHoler.tvTime.setOnCountdownEndListener(new CountdownView.OnCountdownEndListener() {
+//                    @Override
+//                    public void onEnd(CountdownView cv) {
+//                        LogUtils.e("onEnd");
+//                    }
+//                });
+
+
+//                CountdownView mCvCountdownViewTest2 = (CountdownView)findViewById(R.id.cv_countdownViewTest2);
+//                mCvCountdownViewTest2.setTag("test2");
+//                long time2 = (long)30 * 60 * 1000;
+//                mCvCountdownViewTest2.start(time2);
                 List<DataBean> prodList = secKill.getProdList();
                 if (prodList != null && prodList.size() != 0){
                     HomeSecondKill2Adapter adapter1 = new HomeSecondKill2Adapter(act, prodList);

@@ -17,7 +17,7 @@
 
     <TextView
         android:id="@+id/tv_price"
-        style="@style/Tv12black"
+        style="@style/Tv12reb"
         android:layout_marginTop="@dimen/px10"
         app:layout_constraintEnd_toStartOf="@+id/tv_price2"
         app:layout_constraintHorizontal_bias="0.5"

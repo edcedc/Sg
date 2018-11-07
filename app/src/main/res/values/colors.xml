@@ -5,6 +5,8 @@
     <color name="colorAccent">#FF4081</color>
 
     <color name="tab_unselect">#666666</color>
+    <color name="tab_gray">#999999</color>
+    <color name="tab_black">#111111</color>
 
     <color name="reb_FE2701">#FE2701</color>
     <color name="reb_C91E00">#C91E00</color>
@@ -13,6 +15,7 @@
     <color name="white_f4f4f4">#f2f2f2</color>
     <color name="black_898989">#898989</color>
     <color name="black_3E3A39">#3E3A39</color>
+    <color name="reb_F3BF65">#F3BF65</color>
     <color name="black_EEEEEE">#EEEEEE</color>
     <color name="black_A1A1A1">#A1A1A1</color>
     <color name="black_E5E5E5">#E5E5E5</color>

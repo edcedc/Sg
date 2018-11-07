@@ -14,11 +14,11 @@
         android:orientation="horizontal">
 
         <View
-            style="@style/divider_2"/>
+            style="@style/divider_2"
+            android:visibility="gone"/>
 
         <TextView
             android:id="@+id/tv_title"
-            android:layout_marginLeft="@dimen/px20"
             android:textColor="@color/black"
             android:layout_weight="1"
             android:text="@string/new_arrivals"
