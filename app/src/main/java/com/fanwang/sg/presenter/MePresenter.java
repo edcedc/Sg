@@ -57,7 +57,7 @@ public class MePresenter extends MeContract.Presenter{
         for (int i = 0;i < labelStr1.length;i++){
             DataBean bean1 = new DataBean();
             bean1.setName(labelStr1[i]);
-            bean1.setImg(labelImg1[i]);
+            bean1.setImg(labelImg1[i] + "");
             listBean1.add(bean1);
         }
         HomeLabelAdapter adapter1 = new HomeLabelAdapter(act, listBean1);
@@ -94,7 +94,7 @@ public class MePresenter extends MeContract.Presenter{
         for (int i = 0;i < labelStr2.length;i++){
             DataBean bean1 = new DataBean();
             bean1.setName(labelStr2[i]);
-            bean1.setImg(labelImg2[i]);
+            bean1.setImg(labelImg2[i] + "");
             listBean2.add(bean1);
         }
         HomeLabelAdapter adapter2 = new HomeLabelAdapter(act, listBean2);
@@ -133,7 +133,7 @@ public class MePresenter extends MeContract.Presenter{
         List<DataBean> listBean = new ArrayList<>();
         for (int i = 0; i < imgs.length; i++) {
             DataBean bean = new DataBean();
-            bean.setImg(imgs[i]);
+            bean.setImg(imgs[i] + "");
             bean.setName(strs[i]);
             listBean.add(bean);
         }

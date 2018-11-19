@@ -280,10 +280,11 @@ public class HomeFrg extends BaseFragment<HomePresenter, FHomeBinding> implement
         }else {
             mB.bannerManjian.setVisibility(View.GONE);
         }
+
         final List<DataBean> manJianLists = manJianBean.getProdLists();
         if (manJianLists != null && manJianLists.size() != 0){
             mB.gvManjian.setVisibility(View.VISIBLE);
-            HomeImgAdapter2 adapter = new HomeImgAdapter2(act, manZengLists);
+            HomeImgAdapter2 adapter = new HomeImgAdapter2(act, manJianLists);
             mB.gvManjian.setAdapter(adapter);
             mB.gvManjian.setOnItemClickListener(new AdapterView.OnItemClickListener() {
                 @Override

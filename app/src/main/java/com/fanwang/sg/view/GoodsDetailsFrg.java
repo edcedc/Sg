@@ -454,12 +454,17 @@ public class GoodsDetailsFrg extends BaseFragment<GoodsDetailsPresenter, FGoodsD
             mB.gpCollageProcess.setVisibility(View.VISIBLE);
             List<DataBean> collageOrderList = bean.getCollageOrderList();//判断当前有无参团人数
             if (collageOrderList != null && collageOrderList.size() != 0) {
-                mB.gpBeingCollage.setVisibility(View.VISIBLE);
+                if (collageType == Constants.collage_process) {
+                    mB.gpBeingCollage.setVisibility(View.VISIBLE);
+                } else {
+                    mB.gpBeingCollage.setVisibility(View.GONE);
+                }
                 collageOrderAdapter = new CollageOrderAdapter(act, this, collageOrderList);
                 mB.lvCollage.setAdapter(collageOrderAdapter);
+                mB.lvCollage.setVisibility(View.GONE);
                 flag = 1;
                 //tvPurchase.setText("参与拼团" + getString(R.string.monetary_symbol) + bean.getRealPrice());
-                mB.view4.setVisibility(View.VISIBLE);
+                mB.view4.setVisibility(View.GONE);
                 collageOrderAdapter.setCollageNum(bean.getCollageNum());
                 collageOrderAdapter.setSubmitOrderBean(bean);
                 collageOrderAdapter.notifyDataSetChanged();
@@ -603,7 +608,7 @@ public class GoodsDetailsFrg extends BaseFragment<GoodsDetailsPresenter, FGoodsD
                     mPresenter.onAddCart(type, id, skuId, goods_number, GoodsDetailsFrg.this, listBean, secKillState, flag, isCredited);
                 } else if (mType == 2) {
                     mPresenter.onSubmitOrder(GoodsDetailsFrg.this, type, id, listBean, secKillState, flag, isCredited);
-                }else if (mType == 3){
+                } else if (mType == 3) {
                     mPresenter.onSubmitOrder(GoodsDetailsFrg.this, type, id, listBean, secKillState, flag, isCredited);
                 }
             }

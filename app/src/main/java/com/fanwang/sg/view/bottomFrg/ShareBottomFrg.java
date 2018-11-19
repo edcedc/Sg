@@ -90,7 +90,7 @@ public class ShareBottomFrg extends BaseBottomSheetFrag {
         for (int i = 0;i < str.length;i++){
             DataBean bean = new DataBean();
             bean.setName(str[i]);
-            bean.setImg(img[i]);
+            bean.setImg(img[i] + "");
             listBean.add(bean);
         }
         if (adapter == null){

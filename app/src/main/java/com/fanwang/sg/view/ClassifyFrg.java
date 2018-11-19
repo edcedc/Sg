@@ -9,6 +9,7 @@ import android.support.v7.widget.GridLayoutManager;
 import android.support.v7.widget.LinearLayoutManager;
 import android.view.View;
 import android.widget.AdapterView;
+import android.widget.EditText;
 
 import com.fanwang.sg.R;
 import com.fanwang.sg.adapter.ClassLeftAdapter;
@@ -18,6 +19,7 @@ import com.fanwang.sg.base.BaseFragment;
 import com.fanwang.sg.base.BasePresenter;
 import com.fanwang.sg.base.IBaseView;
 import com.fanwang.sg.bean.DataBean;
+import com.fanwang.sg.controller.UIHelper;
 import com.fanwang.sg.databinding.FClassifyBinding;
 import com.fanwang.sg.presenter.ClassifyPresenter;
 import com.fanwang.sg.view.impl.ClassifyContract;
@@ -40,7 +42,7 @@ import me.yokeyword.fragmentation.SupportFragment;
  *  分类
  */
 
-public class ClassifyFrg extends BaseFragment<ClassifyPresenter, FClassifyBinding> implements ClassifyContract.View{
+public class ClassifyFrg extends BaseFragment<ClassifyPresenter, FClassifyBinding> implements ClassifyContract.View, View.OnClickListener{
 
     public static ClassifyFrg newInstance() {
         Bundle args = new Bundle();
@@ -72,6 +74,12 @@ public class ClassifyFrg extends BaseFragment<ClassifyPresenter, FClassifyBindin
     @Override
     protected void initView(View view) {
         view.findViewById(R.id.iv_search_img).setVisibility(View.INVISIBLE);
+
+        EditText etSearch = view.findViewById(R.id.et_searh);
+        etSearch.setOnClickListener(this);
+        etSearch.setFocusable(false);
+        etSearch.setLongClickable(false);
+        etSearch.setTextIsSelectable(false);
         if (leftAdapter == null){
             leftAdapter = new ClassLeftAdapter(act, listLeft);
         }
@@ -133,4 +141,12 @@ public class ClassifyFrg extends BaseFragment<ClassifyPresenter, FClassifyBindin
         transaction.commitAllowingStateLoss();
     }
 
+    @Override
+    public void onClick(View view) {
+        switch (view.getId()){
+            case R.id.et_searh:
+                UIHelper.startSearchFrg(this);
+                break;
+        }
+    }
 }

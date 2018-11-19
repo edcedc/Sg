@@ -108,8 +108,8 @@
                     android:gravity="center"
                     android:padding="@dimen/px20"
                     android:text="@string/get_code"
-                    android:textColor="@color/white"
-                    app:rv_backgroundColor="@color/reb_FE2701"
+                    android:textColor="@color/reb_F4C778"
+                    app:rv_backgroundColor="@color/tab_black"
                     app:rv_cornerRadius_BR="@dimen/px10"
                     app:rv_cornerRadius_TR="@dimen/px10" />
 

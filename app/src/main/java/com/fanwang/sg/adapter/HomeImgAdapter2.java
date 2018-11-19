@@ -41,7 +41,8 @@ public class HomeImgAdapter2 extends BaseListViewAdapter<DataBean>{
         }
         DataBean bean = listBean.get(position);
         GlideLoadingUtils.load(act, CloudApi.SERVLET_IMG_URL + bean.getImage(), viewHolder.ivImg);
-        viewHolder.tvPrice.setText(act.getString(R.string.monetary_symbol2) + bean.getMarketPrice());
+//        viewHolder.tvPrice.setText(act.getString(R.string.monetary_symbol2) + bean.getMarketPrice());
+        viewHolder.tvPrice.setText(act.getString(R.string.monetary_symbol2) + bean.getRealPrice());
         viewHolder.ivImg.setWH(1, 1, true);
         return convertView;
     }

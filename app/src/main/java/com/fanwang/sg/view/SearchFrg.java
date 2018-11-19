@@ -137,7 +137,7 @@ public class SearchFrg extends BaseFragment<SearchPresenter, FSearchBinding> imp
 
         mB.refreshLayout.startRefresh();
         showLoadDataing();
-        mB.refreshLayout.setEnableLoadmore(false);
+//        mB.refreshLayout.setEnableLoadmore(true);
         setRefreshLayout(mB.refreshLayout, new RefreshListenerAdapter() {
             @Override
             public void onRefresh(TwinklingRefreshLayout refreshLayout) {

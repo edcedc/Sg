@@ -9,8 +9,8 @@
 
     <com.fanwang.sg.weight.CircleImageView
         android:id="@+id/iv_head"
-        android:layout_width="@dimen/px140"
-        android:layout_height="@dimen/px140"
+        android:layout_width="@dimen/px100"
+        android:layout_height="@dimen/px100"
         android:src="@mipmap/icon_1"/>
 
     <TextView

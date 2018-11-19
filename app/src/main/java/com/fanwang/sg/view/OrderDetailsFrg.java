@@ -3,11 +3,13 @@ package com.fanwang.sg.view;
 import android.graphics.Color;
 import android.os.Build;
 import android.os.Bundle;
+import android.os.Handler;
 import android.support.annotation.RequiresApi;
 import android.support.v7.widget.DividerItemDecoration;
 import android.text.Html;
 import android.view.View;
 
+import com.blankj.utilcode.util.CacheDiskUtils;
 import com.blankj.utilcode.util.LogUtils;
 import com.blankj.utilcode.util.StringUtils;
 import com.blankj.utilcode.util.TimeUtils;
@@ -23,6 +25,7 @@ import com.fanwang.sg.event.RefreshOrderInEvent;
 import com.fanwang.sg.presenter.OrderDetailsPresenter;
 import com.fanwang.sg.utils.Constants;
 import com.fanwang.sg.utils.DateUtils;
+import com.fanwang.sg.utils.PopupWindowTool;
 import com.fanwang.sg.view.bottomFrg.PayBottomFrg;
 import com.fanwang.sg.view.impl.OrderDetailsContract;
 import com.fanwang.sg.weight.LinearDividerItemDecoration;
@@ -174,7 +177,7 @@ public class OrderDetailsFrg extends BaseFragment<OrderDetailsPresenter, FOrderD
 
             });
         } else if (text.equals(getString(R.string.cancel_order))) {
-
+            mPresenter.orderCancel(id);
         } else if (text.equals(getString(R.string.clone2))) {
             mPresenter.orderShutDown(id);
         }
@@ -275,22 +278,22 @@ public class OrderDetailsFrg extends BaseFragment<OrderDetailsPresenter, FOrderD
             }
             cargoType = Constants.refund;
         } else if (state == 1006) {
-            mB.tvState.setText("未发货，仅退款");
+            mB.tvState.setText("交易关闭");
             mB.gpTitleTime.setVisibility(View.GONE);
-            mB.tvState2.setVisibility(View.VISIBLE);
-            switch (isRefund) {
-                case 1:
-                    mB.tvState2.setText("已申请");
-                    break;
-                case 2:
-                    mB.tvState2.setText("申请退款失败");
-                    break;
-                case 3:
-                    mB.tvState2.setText("申请退款成功");
-                    break;
-            }
+            mB.tvState2.setVisibility(View.GONE);
+//            switch (isRefund) {
+//                case 1:
+//                    mB.tvState2.setText("已申请");
+//                    break;
+//                case 2:
+//                    mB.tvState2.setText("申请退款失败");
+//                    break;
+//                case 3:
+//                    mB.tvState2.setText("申请退款成功");
+//                    break;
+//            }
             mB.constraintLayout3.setVisibility(View.GONE);
-            mB.constraintLayout1.setVisibility(View.GONE);
+//            mB.constraintLayout1.setVisibility(View.GONE);
         } else if (state == 1004) {
             mB.tvState.setText("交易完成");
             mB.gpTitleTime.setVisibility(View.GONE);
@@ -432,6 +435,11 @@ public class OrderDetailsFrg extends BaseFragment<OrderDetailsPresenter, FOrderD
                 }
                 break;
         }
+    }
+
+    @Override
+    public void onFinish() {
+        getActivity().finish();
     }
 
     //设置倒计时

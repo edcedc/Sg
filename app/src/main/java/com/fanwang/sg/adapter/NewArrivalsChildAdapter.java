@@ -45,7 +45,7 @@ public class NewArrivalsChildAdapter extends BaseRecyclerviewAdapter<DataBean>{
         viewHolder.tvTitle.setText(bean.getName());
         viewHolder.tvPrice.setText(act.getString(R.string.monetary_symbol) + bean.getRealPrice());
         viewHolder.tvPrice2.setText(act.getString(R.string.monetary_symbol) + bean.getMarketPrice());
-        viewHolder.tvPrice2.setVisibility(isDiscount == true ? View.VISIBLE : View.GONE);
+        viewHolder.tvPrice2.setVisibility(isDiscount == true ? View.VISIBLE : View.INVISIBLE);
 
         String zhekou = bean.getZhekou();
         if (!StringUtils.isEmpty(zhekou)){

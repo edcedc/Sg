@@ -83,6 +83,9 @@ public class SetClassBottomFrg extends BaseBottomSheetFrag implements View.OnCli
         tvPrice.setText(price);
 
         tvSet.setText(choice);
+
+        //没想到一开始就进行选中，很纳闷，只能进行一些特殊处理
+        initList(listBean);
         final SetClassAdapter adapter = new SetClassAdapter(act, listBean);
         recyclerView.setLayoutManager(new LinearLayoutManager(act));
         recyclerView.setHasFixedSize(true);
@@ -95,6 +98,19 @@ public class SetClassBottomFrg extends BaseBottomSheetFrag implements View.OnCli
                 setStockPrice(listBean);
             }
         });
+    }
+
+    /**
+     * 初始化一些数据
+     * @param listBean
+     */
+    private void initList(List<DataBean> listBean){
+        for (DataBean bean : listBean){
+            List<DataBean> entries = bean.getEntries();
+            for (DataBean bean1 : entries){
+                bean1.setSelected(false);
+            }
+        }
     }
 
     //计算库存和价钱

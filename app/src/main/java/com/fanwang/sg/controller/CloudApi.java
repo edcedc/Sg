@@ -250,15 +250,17 @@ public class CloudApi {
     /**
      * 搜索商品
      */
-    public static Observable<Response<BaseResponseBean<List<ProductSearchProdBean>>>> productSearchProd(String text) {
-        return OkGo.<BaseResponseBean<List<ProductSearchProdBean>>>get(SERVLET_URL + "product/searchProd")
+    public static Observable<Response<BaseResponseBean<BaseListBean<ProductSearchProdBean>>>> productSearchProd(String text, int pagerNumber) {
+        return OkGo.<BaseResponseBean<BaseListBean<ProductSearchProdBean>>>get(SERVLET_URL + "product/searchProd")
                 .params("keyword", text)
-                .converter(new NewsCallback<BaseResponseBean<List<ProductSearchProdBean>>>() {
+                .params("pageNumber", pagerNumber)
+                .params("pageSize", Constants.pageSize2)
+                .converter(new NewsCallback<BaseResponseBean<BaseListBean<ProductSearchProdBean>>>() {
                     @Override
-                    public void onSuccess(Response<BaseResponseBean<List<ProductSearchProdBean>>> response) {
+                    public void onSuccess(Response<BaseResponseBean<BaseListBean<ProductSearchProdBean>>> response) {
                     }
                 })
-                .adapt(new ObservableResponse<BaseResponseBean<List<ProductSearchProdBean>>>())
+                .adapt(new ObservableResponse<BaseResponseBean<BaseListBean<ProductSearchProdBean>>>())
                 .subscribeOn(Schedulers.io());
     }
 
@@ -869,7 +871,7 @@ public class CloudApi {
                 .params("type", type)
                 .params("coj", coj)
                 .params("productId", id)
-                .params("cartId", id)
+                .params("cartid", id)
                 .params("credit", isCredited)
                 .converter(new JsonConvert<JSONObject>() {
                 })
@@ -1091,6 +1093,24 @@ public class CloudApi {
      */
     public static Observable<Response<BaseResponseBean<DataBean>>> orderConfirmReceipt(String id) {
         return OkGo.<BaseResponseBean<DataBean>>post(SERVLET_URL + "order/confirmReceipt")
+                .params("sessionId", ShareSessionIdCache.getInstance(Utils.getApp()).getSessionId())
+                .params("id", id)
+                .converter(new NewsCallback<BaseResponseBean<DataBean>>() {
+                    @Override
+                    public void onSuccess(Response<BaseResponseBean<DataBean>> response) {
+
+                    }
+                })
+                .adapt(new ObservableResponse<BaseResponseBean<DataBean>>())
+                .subscribeOn(Schedulers.io());
+    }
+
+
+    /**
+     * 取消订单
+     */
+    public static Observable<Response<BaseResponseBean<DataBean>>> orderCancel(String id) {
+        return OkGo.<BaseResponseBean<DataBean>>post(SERVLET_URL + "order/cancel")
                 .params("sessionId", ShareSessionIdCache.getInstance(Utils.getApp()).getSessionId())
                 .params("id", id)
                 .converter(new NewsCallback<BaseResponseBean<DataBean>>() {

@@ -226,7 +226,7 @@ public class CartAdapter extends BaseExpandableListAdapter {
                 }
                 notifyDataSetChanged();
                 if (childClickListener != null){
-                    childClickListener.onChildClick(groupPosition, childPosition);
+                    childClickListener.onChildClick(b, groupPosition, childPosition);
                 }
             }
         });
@@ -257,7 +257,7 @@ public class CartAdapter extends BaseExpandableListAdapter {
         this.childClickListener = listener;
     }
     public interface OnChildClickListener {
-        void onChildClick(int groupPosition, int childPosition);
+        void onChildClick(boolean checked, int groupPosition, int childPosition);
         void onCartNumer(int groupPosition, final int childPosition, String skuid, int num, String id);
     }
 

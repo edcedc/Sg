@@ -88,7 +88,7 @@ public class HomeAdapter extends BaseRecyclerviewAdapter<DataBean> implements BG
 //            bean1.setName("全部");
 //            bean1.setImg(R.mipmap.home_icon_more);
             bean1.setName("更多");
-            bean1.setImg(R.mipmap.home_icon_more);
+            bean1.setImg(R.mipmap.home_icon_more + "");
             labelList.add(bean1);
             HomeLabelAdapter adapter = new HomeLabelAdapter(act, labelList);
             viewHolder.gridView.setAdapter(adapter);
@@ -100,7 +100,7 @@ public class HomeAdapter extends BaseRecyclerviewAdapter<DataBean> implements BG
                     int type = bean2.getType();
                     int atype = bean2.getAtype();
                     String url = bean2.getUrl();
-                    if (name.equals("全部")){
+                    if (name.equals("更多")){
                         EventBus.getDefault().post(new TabSelectedEvent(1));
                     }else {
                         UIHelper.startClassListFrg(root, bean2.getName(), bean2.getActivityId(), 0);

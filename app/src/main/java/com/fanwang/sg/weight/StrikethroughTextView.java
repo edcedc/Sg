@@ -39,7 +39,7 @@ public class StrikethroughTextView extends android.support.v7.widget.AppCompatTe
 
         getPaint().setFlags(Paint.STRIKE_THRU_TEXT_FLAG); //中划线
         setPaintFlags(Paint.STRIKE_THRU_TEXT_FLAG | Paint.ANTI_ALIAS_FLAG);// 设置中划线并加清晰
-        setTextColor(ContextCompat.getColor(context,R.color.black_A1A1A1));
+        setTextColor(ContextCompat.getColor(context,R.color.black_3E3A39));
         setTextSize(10);
     }
 

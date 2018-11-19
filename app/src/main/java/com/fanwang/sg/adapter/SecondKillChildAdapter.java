@@ -56,8 +56,9 @@ public class SecondKillChildAdapter extends BaseRecyclerviewAdapter<DataBean>{
         final DataBean bean = listBean.get(position);
         GlideLoadingUtils.load(act, CloudApi.SERVLET_IMG_URL + bean.getImage(), viewHolder.ivImg);
         viewHolder.tvTitle.setText(bean.getName());
-        viewHolder.tvPrice.setText(act.getString(R.string.monetary_symbol) + bean.getMarketPrice());
-        viewHolder.tvPrice2.setText(act.getString(R.string.monetary_symbol) + bean.getRealPrice());
+//        viewHolder.tvPrice.setText(act.getString(R.string.monetary_symbol) + bean.getMarketPrice());
+        viewHolder.tvPrice.setText(act.getString(R.string.monetary_symbol) + bean.getRealPrice());
+        viewHolder.tvPrice2.setText(act.getString(R.string.monetary_symbol) + bean.getMarketPrice());
         final int totalStock = bean.getTotalStock();//总库存
         final int surplusStock = bean.getSurplusStock();//剩余
 

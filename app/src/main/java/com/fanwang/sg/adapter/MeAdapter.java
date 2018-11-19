@@ -38,7 +38,13 @@ public class MeAdapter extends BaseRecyclerviewAdapter {
             viewHolder.tvTitle.setText(bean.getName());
             if (isImg){
                 viewHolder.ivImg.setVisibility(View.VISIBLE);
-                viewHolder.ivImg.setBackgroundResource(bean.getImg());
+
+                try {
+
+                viewHolder.ivImg.setBackgroundResource(Integer.valueOf(bean.getImg()));
+                } catch (Exception e){
+
+                }
             }
 
             if (bean.getName().equals("清理缓存")){

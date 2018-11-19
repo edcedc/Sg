@@ -284,12 +284,14 @@
                         android:text="@string/being_collage"
                         android:textColor="@color/black_A1A1A1"
                         android:textSize="@dimen/size26"
+                        android:visibility="gone"
                         app:layout_constraintTop_toBottomOf="@+id/view2" />
 
                       <com.fanwang.sg.weight.WithScrollListView
                           app:layout_constraintTop_toBottomOf="@+id/tv_being_collage"
                           android:id="@+id/lv_collage"
                           android:divider="@null"
+                          android:visibility="gone"
                           android:layout_width="match_parent"
                           android:layout_height="wrap_content"/>
                     

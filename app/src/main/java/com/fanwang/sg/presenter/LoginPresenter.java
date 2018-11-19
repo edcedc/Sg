@@ -113,12 +113,14 @@ public class LoginPresenter extends LoginContract.Presenter {
             public void afterTextChanged(Editable editable) {
                 String code = etPwd.getText().toString().trim();
                 if (!StringUtils.isEmpty(code) && code.length() != 0 && editable.length() != 0){
-                    delegate.setBackgroundColor(ContextCompat.getColor(act,R.color.reb_FE2701));
-                    delegate.setBackgroundPressColor(ContextCompat.getColor(act,R.color.reb_C91E00));
+                    delegate.setBackgroundColor(ContextCompat.getColor(act,R.color.tab_black));
+                    delegate.setBackgroundPressColor(ContextCompat.getColor(act,R.color.tab_black));
+                    tvConfirm.setTextColor(ContextCompat.getColor(act,R.color.reb_F4C778));
                     tvConfirm.setEnabled(true);
                 }else {
                     delegate.setBackgroundColor(ContextCompat.getColor(act,R.color.black_E5E5E5));
                     delegate.setBackgroundPressColor(ContextCompat.getColor(act,R.color.black_E5E5E5));
+                    tvConfirm.setTextColor(ContextCompat.getColor(act,R.color.white));
                     tvConfirm.setEnabled(false);
                 }
             }
@@ -138,12 +140,14 @@ public class LoginPresenter extends LoginContract.Presenter {
             public void afterTextChanged(Editable editable) {
                 String phone = etPhone.getText().toString().trim();
                 if (!StringUtils.isEmpty(phone) && phone.length() != 0 && editable.length() != 0){
-                    delegate.setBackgroundColor(ContextCompat.getColor(act,R.color.reb_FE2701));
-                    delegate.setBackgroundPressColor(ContextCompat.getColor(act,R.color.reb_C91E00));
+                    delegate.setBackgroundColor(ContextCompat.getColor(act,R.color.tab_black));
+                    delegate.setBackgroundPressColor(ContextCompat.getColor(act,R.color.tab_black));
+                    tvConfirm.setTextColor(ContextCompat.getColor(act,R.color.reb_F4C778));
                     tvConfirm.setEnabled(true);
                 }else {
                     delegate.setBackgroundColor(ContextCompat.getColor(act,R.color.black_E5E5E5));
                     delegate.setBackgroundPressColor(ContextCompat.getColor(act,R.color.black_E5E5E5));
+                    tvConfirm.setTextColor(ContextCompat.getColor(act,R.color.white));
                     tvConfirm.setEnabled(false);
                 }
             }
@@ -214,7 +218,7 @@ public class LoginPresenter extends LoginContract.Presenter {
                     @Override
                     public void onNext(JSONObject jsonObject) {
                         CloudApi.userWeChatId(jsonObject.optString("headimgurl"), jsonObject.optString("nickname"),
-                                jsonObject.optString("openid"), jsonObject.optInt("sex"))
+                                jsonObject.optString("unionid"), jsonObject.optInt("sex"))
                                 .doOnSubscribe(new Consumer<Disposable>() {
                                     @Override
                                     public void accept(Disposable disposable) throws Exception {
@@ -231,21 +235,29 @@ public class LoginPresenter extends LoginContract.Presenter {
                                     @Override
                                     public void onNext(JSONObject jsonObject) {
                                         if (jsonObject.optInt("code") == Code.CODE_SUCCESS){
-                                            JSONObject data = jsonObject.optJSONObject("data");
-                                            if (data.optInt("code") == Code.CODE_SUCCESS){
-                                                JSONObject obj = data.optJSONObject("data");
+//                                            JSONObject data = jsonObject.optJSONObject("data");
+//                                            if (data.optInt("code") == Code.CODE_SUCCESS){
+                                                JSONObject obj = jsonObject.optJSONObject("data");
                                                 if (obj != null){
-                                                    String mobile = obj.optString("mobile");
+//                                                    String mobile = obj.optString("mobile");
+                                                    User.getInstance().setLogin(true);
+                                                    User.getInstance().setUserObj(obj);
                                                     ShareSessionIdCache.getInstance(Utils.getApp()).save(obj.optString("sessionId"));
-                                                    if (mobile.equals("null")){
-                                                        UIHelper.startBindPhoneFrg(root, 0);
-                                                        ToastUtils.showShort("未绑定手机号码");
-                                                    }else {
-                                                        ToastUtils.showShort(obj.optString("desc"));
+//                                                    if (mobile.equals("null")){
+//                                                        UIHelper.startBindPhoneFrg(root, 0);
+//                                                        ToastUtils.showShort("未绑定手机号码");
+//                                                    }else {
+                                                        ToastUtils.showShort(jsonObject.optString("desc"));
                                                         mView.loginSuccess();
-                                                    }
+//                                                    }
+
+//                                                    if (data != null){
+//                                                        User.getInstance().setUserObj(data);
+//                                                        ShareSessionIdCache.getInstance(Utils.getApp()).save(data.optString("sessionId"));
+//                                                        mView.loginSuccess();
+//                                                    }
                                                 }
-                                            }
+//                                            }
                                         }else {
                                             ToastUtils.showShort(jsonObject.optString("desc"));
                                         }

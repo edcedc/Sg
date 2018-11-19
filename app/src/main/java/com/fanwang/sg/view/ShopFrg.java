@@ -12,6 +12,7 @@ import android.view.ViewGroup;
 import android.widget.LinearLayout;
 import android.widget.RelativeLayout;
 
+import com.blankj.utilcode.util.LogUtils;
 import com.fanwang.sg.R;
 import com.fanwang.sg.adapter.HomeNewArrivalsAdapter2;
 import com.fanwang.sg.adapter.MessageAdapter;
@@ -107,7 +108,7 @@ public class ShopFrg extends BaseFragment<ShopPresenter, FShopBinding> implement
         }
         listBean.addAll((List<DataBean>) data);
         adapter.notifyDataSetChanged();
-        mB.tvGoodsNumber.setText("数量：" + (listBean.size() + totalRow));
+        mB.tvGoodsNumber.setText("数量：" + totalRow);
     }
 
     @Override
@@ -123,6 +124,6 @@ public class ShopFrg extends BaseFragment<ShopPresenter, FShopBinding> implement
     @Override
     public void onPagerNum(int totalRow) {
         this.totalRow = totalRow;
-        mB.tvGoodsNumber.setText("数量：" + (listBean.size() + totalRow));
+        mB.tvGoodsNumber.setText("数量：" + totalRow);
     }
 }

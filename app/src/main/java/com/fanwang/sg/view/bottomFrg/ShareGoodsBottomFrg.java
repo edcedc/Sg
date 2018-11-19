@@ -64,18 +64,20 @@ public class ShareGoodsBottomFrg extends BaseBottomSheetFrag {
                 }
             }
         });
-        ivZking.getViewTreeObserver().addOnGlobalLayoutListener(new ViewTreeObserver.OnGlobalLayoutListener() {
-            @Override
-            public void onGlobalLayout() {
-                ivZking.getViewTreeObserver().removeGlobalOnLayoutListener(this);
-                try {
-                    Bitmap bitmap = ZXingUtils.creatBarcode(CloudApi.SERVLET_URL + "product/productDetail?pid=" + bean.getId(), ivZking.getWidth());
-                    ivZking.setImageBitmap(bitmap);
-                } catch (WriterException e) {
-                    e.printStackTrace();
-                }
-            }
-        });
+
+        ivZking.setImageResource(R.mipmap.commodity_details_share);
+//        ivZking.getViewTreeObserver().addOnGlobalLayoutListener(new ViewTreeObserver.OnGlobalLayoutListener() {
+//            @Override
+//            public void onGlobalLayout() {
+//                ivZking.getViewTreeObserver().removeGlobalOnLayoutListener(this);
+//                try {
+//                    Bitmap bitmap = ZXingUtils.creatBarcode(CloudApi.SERVLET_URL + "product/productDetail?pid=" + bean.getId(), ivZking.getWidth());
+//                    ivZking.setImageBitmap(bitmap);
+//                } catch (WriterException e) {
+//                    e.printStackTrace();
+//                }
+//            }
+//        });
         ivImg.getViewTreeObserver().addOnGlobalLayoutListener(new ViewTreeObserver.OnGlobalLayoutListener() {
             @Override
             public void onGlobalLayout() {

@@ -38,8 +38,13 @@ public class ShareAdapter extends BaseListViewAdapter<DataBean>{
         DataBean bean = listBean.get(position);
 
         viewHolder.tvText.setText(bean.getName());
+
+        try {
         viewHolder.tvText.setCompoundDrawablesWithIntrinsicBounds(null,
-                ContextCompat.getDrawable(act,bean.getImg()), null, null);
+                ContextCompat.getDrawable(act,Integer.valueOf(bean.getImg())), null, null);
+
+        } catch (Exception e){
+        }
         return convertView;
     }
 

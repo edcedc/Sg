@@ -19,6 +19,8 @@ public interface OrderDetailsContract {
         void showRefund(DataBean bean);
 
         void payType(int payType, String data);
+
+        void onFinish();
     }
 
     abstract class Presenter extends BasePresenter<View>{
@@ -28,6 +30,8 @@ public interface OrderDetailsContract {
         public abstract void orderConfirmReceipt(String id);
 
         public abstract void orderShowRefund(String id);
+
+        public abstract void orderCancel(String id);
 
         public abstract void pay(String id, int payType);
 

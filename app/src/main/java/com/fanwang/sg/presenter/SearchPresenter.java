@@ -1,10 +1,12 @@
 package com.fanwang.sg.presenter;
 
 import android.os.Handler;
+import android.os.Message;
 
 import com.blankj.utilcode.util.StringUtils;
 import com.blankj.utilcode.util.ToastUtils;
 import com.fanwang.sg.R;
+import com.fanwang.sg.bean.BaseListBean;
 import com.fanwang.sg.bean.BaseResponseBean;
 import com.fanwang.sg.bean.DataBean;
 import com.fanwang.sg.bean.ProductSearchProdBean;
@@ -29,16 +31,16 @@ import io.reactivex.functions.Consumer;
  * 版本：v1.0
  */
 
-public class SearchPresenter extends SearchContract.Presenter{
+public class SearchPresenter extends SearchContract.Presenter {
 
     @Override
     public void onRequest(String trim, int pageNumber, final TwinklingRefreshLayout refreshLayout) {
-        if (StringUtils.isEmpty(trim)){
+        if (StringUtils.isEmpty(trim)) {
             ToastUtils.showShort(act.getString(R.string.error_search_null));
             return;
         }
-        refreshLayout.startRefresh();
-        CloudApi.productSearchProd(trim)
+//        refreshLayout.startRefresh();
+        CloudApi.productSearchProd(trim, pageNumber)
                 .doOnSubscribe(new Consumer<Disposable>() {
                     @Override
                     public void accept(Disposable disposable) throws Exception {
@@ -46,33 +48,23 @@ public class SearchPresenter extends SearchContract.Presenter{
                     }
                 })
                 .subscribeOn(AndroidSchedulers.mainThread())
-                .subscribe(new Observer<Response<BaseResponseBean<List<ProductSearchProdBean>>>>() {
+                .subscribe(new Observer<Response<BaseResponseBean<BaseListBean<ProductSearchProdBean>>>>() {
                     @Override
                     public void onSubscribe(Disposable d) {
                         mView.addDisposable(d);
                     }
 
                     @Override
-                    public void onNext(Response<BaseResponseBean<List<ProductSearchProdBean>>> baseResponseBeanResponse) {
-                        if (baseResponseBeanResponse.body().code == Code.CODE_SUCCESS){
-                            List<ProductSearchProdBean> data = baseResponseBeanResponse.body().data;
-                            List<DataBean> listBean = new ArrayList<>();
-                            if (data != null && data.size() != 0){
-                                for (ProductSearchProdBean prodBean : data){
-                                    DataBean bean = new DataBean();
-                                    bean.setName(prodBean.getName());
-                                    bean.setMarketPrice(new BigDecimal(prodBean.getMarketPrice()));
-                                    bean.setRealPrice(new BigDecimal(prodBean.getRealPrice()));
-                                    bean.setId(prodBean.getId());
-                                    bean.setZhekou(prodBean.getZhekou() + "");
-                                    bean.setImage(prodBean.getImage());
-                                    bean.setType(1);
-                                    listBean.add(bean);
+                    public void onNext(Response<BaseResponseBean<BaseListBean<ProductSearchProdBean>>> baseResponseBeanResponse) {
+                        if (baseResponseBeanResponse.body().code == Code.CODE_SUCCESS) {
+                            BaseListBean<ProductSearchProdBean> data = baseResponseBeanResponse.body().data;
+                            if (data != null){
+                                List<ProductSearchProdBean> list = data.getList();
+                                if (list != null && list.size() != 0){
+                                    ergodicData(list);
                                 }
-                                mView.hideLoading();
-                                mView.setData(listBean);
                             }
-                        }else {
+                        } else {
                             mView.showLoadEmpty();
                         }
                     }
@@ -87,6 +79,28 @@ public class SearchPresenter extends SearchContract.Presenter{
 //                        mView.hideLoading();
                     }
                 });
+    }
+
+    /**
+     * 遍历数组
+     */
+    private void ergodicData(List<ProductSearchProdBean> data) {
+        List<DataBean> listBean = new ArrayList<>();
+        if (data != null && data.size() != 0) {
+            for (ProductSearchProdBean prodBean : data) {
+                DataBean bean = new DataBean();
+                bean.setName(prodBean.getName());
+                bean.setMarketPrice(new BigDecimal(prodBean.getMarketPrice()));
+                bean.setRealPrice(new BigDecimal(prodBean.getRealPrice()));
+                bean.setId(prodBean.getId());
+                bean.setZhekou(prodBean.getZhekou() + "");
+                bean.setImage(prodBean.getImage());
+                bean.setType(1);
+                listBean.add(bean);
+            }
+            mView.hideLoading();
+            mView.setData(listBean);
+        }
     }
 
     @Override
@@ -107,13 +121,13 @@ public class SearchPresenter extends SearchContract.Presenter{
 
                     @Override
                     public void onNext(Response<BaseResponseBean<List<DataBean>>> baseResponseBeanResponse) {
-                        if (baseResponseBeanResponse.body().code == Code.CODE_SUCCESS){
+                        if (baseResponseBeanResponse.body().code == Code.CODE_SUCCESS) {
                             List<DataBean> data = baseResponseBeanResponse.body().data;
-                            if (data != null && data.size() != 0){
+                            if (data != null && data.size() != 0) {
                                 mView.hideLoading();
                                 mView.setAefaultData(data);
                             }
-                        }else {
+                        } else {
                             mView.showLoadEmpty();
                         }
                     }

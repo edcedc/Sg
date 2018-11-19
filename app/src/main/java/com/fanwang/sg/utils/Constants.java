@@ -10,6 +10,7 @@ public class Constants {
 
    public static final int ITEMCOUNT = 10;
    public static final int pageSize = 10;
+   public static final int pageSize2 = 20;
 
    public static final int collage_process = 1001;//正在秒拼
    public static final int collage_preview = 1002;//拼团预告

@@ -36,14 +36,22 @@
                 android:layout_height="wrap_content"
                 android:orientation="vertical"
                 app:rv_backgroundColor="@color/white"
-                android:alpha="0.7"
+                android:alpha="0.8"
                 app:rv_cornerRadius="@dimen/px30">
 
-                <ImageView
-                    android:id="@+id/iv_zking"
-                    android:scaleType="fitXY"
-                    android:layout_width="@dimen/px200"
-                    android:layout_height="@dimen/px200" />
+                <FrameLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:background="@color/white">
+
+                    <ImageView
+                        android:id="@+id/iv_zking"
+                        android:scaleType="fitXY"
+                        android:layout_width="@dimen/px200"
+                        android:layout_height="@dimen/px200"
+                        android:layout_margin="@dimen/px10"/>
+
+                </FrameLayout>
 
                 <com.flyco.roundview.RoundTextView
                     android:id="@+id/tv_confirm"
@@ -51,7 +59,8 @@
                     style="@style/RoundBlueTextView"
                     android:layout_width="@dimen/px400"
                     android:text="@string/share"
-                    app:rv_backgroundColor="@color/reb_FE2701"
+                    android:textColor="@color/reb_F4C778"
+                    app:rv_backgroundColor="@color/tab_black"
                     app:rv_cornerRadius="@dimen/px10"
                     app:rv_backgroundPressColor="@color/reb_C91E00"/>
 

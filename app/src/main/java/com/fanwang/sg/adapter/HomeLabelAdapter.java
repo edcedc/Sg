@@ -21,7 +21,7 @@ import java.util.List;
  * 版本：v1.0
  */
 
-public class HomeLabelAdapter extends BaseListViewAdapter<DataBean>{
+public class HomeLabelAdapter extends BaseListViewAdapter<DataBean> {
 
     public HomeLabelAdapter(Context act, List listBean) {
         super(act, listBean);
@@ -38,21 +38,29 @@ public class HomeLabelAdapter extends BaseListViewAdapter<DataBean>{
             viewHolder = (ViewHolder) convertView.getTag();
         }
         DataBean bean = listBean.get(position);
-        if (bean != null){
+        if (bean != null) {
             String image = bean.getImage();
-            if (listBean.size() - 1 == position){
-                viewHolder.ivImg.setImageResource(bean.getImg());
-            }else if (!StringUtils.isEmpty(image)){
+            if (listBean.size() - 1 == position) {
+                try {
+                    viewHolder.ivImg.setImageResource(Integer.valueOf(bean.getImg()));
+                } catch (Exception e) {
+
+                }
+            } else if (!StringUtils.isEmpty(image)) {
                 GlideLoadingUtils.load(act, CloudApi.SERVLET_IMG_URL + image, viewHolder.ivImg);
-            }else {
-                viewHolder.ivImg.setImageResource(bean.getImg());
+            } else {
+                try {
+                    viewHolder.ivImg.setImageResource(Integer.valueOf(bean.getImg()));
+                } catch (Exception e) {
+
+                }
             }
             viewHolder.tvText.setText(bean.getName());
         }
         return convertView;
     }
 
-    class ViewHolder{
+    class ViewHolder {
 
         TextView tvText;
         ImageView ivImg;

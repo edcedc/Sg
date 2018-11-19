@@ -105,6 +105,48 @@ public class OrderDetailsPresenter extends OrderDetailsContract.Presenter{
     }
 
     @Override
+    public void orderCancel(final String id) {
+        PopupWindowTool.showDialog(act, PopupWindowTool.dialog_dalete, new PopupWindowTool.DialogListener() {
+            @Override
+            public void onClick() {
+                CloudApi.orderCancel(id)
+                        .doOnSubscribe(new Consumer<Disposable>() {
+                            @Override
+                            public void accept(Disposable disposable) throws Exception {
+                                mView.showLoading();
+                            }
+                        })
+                        .observeOn(AndroidSchedulers.mainThread())
+                        .subscribe(new Observer<Response<BaseResponseBean<DataBean>>>() {
+                            @Override
+                            public void onSubscribe(Disposable d) {
+                                mView.addDisposable(d);
+                            }
+
+                            @Override
+                            public void onNext(Response<BaseResponseBean<DataBean>> baseResponseBeanResponse) {
+                                if (baseResponseBeanResponse.body().code == Code.CODE_SUCCESS){
+                                    EventBus.getDefault().post(new RefreshOrderInEvent());
+                                    mView.onFinish();
+                                }
+                                showToast(baseResponseBeanResponse.body().desc);
+                            }
+
+                            @Override
+                            public void onError(Throwable e) {
+                                mView.onError(e);
+                            }
+
+                            @Override
+                            public void onComplete() {
+                                mView.hideLoading();
+                            }
+                        });
+            }
+        });
+    }
+
+    @Override
     public void orderShowRefund(String id) {
         CloudApi.orderShowRefund(id)
                 .doOnSubscribe(new Consumer<Disposable>() {

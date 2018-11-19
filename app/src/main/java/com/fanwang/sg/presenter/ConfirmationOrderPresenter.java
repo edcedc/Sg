@@ -1,6 +1,7 @@
 package com.fanwang.sg.presenter;
 
 import com.blankj.utilcode.util.ActivityUtils;
+import com.blankj.utilcode.util.LogUtils;
 import com.blankj.utilcode.util.StringUtils;
 import com.fanwang.sg.R;
 import com.fanwang.sg.base.BaseFragment;
@@ -95,10 +96,13 @@ public class ConfirmationOrderPresenter extends ConfirmationOrderContract.Presen
         }
         StringBuilder sbId = new StringBuilder();
         final JSONArray array = new JSONArray();
+        int i = 0;
         for (DataBean bean : listBean) {
             List<DataBean> prod = bean.getProd();
             for (DataBean bean1 : prod) {
+                i += 1;
                 sbId.append(bean1.getId()).append(",");
+//                sbId.deleteCharAt(sbId.length()-1);
                 JSONObject object = new JSONObject();
                 try {
                     object.put("sku", bean1.getSkuId());
@@ -109,7 +113,14 @@ public class ConfirmationOrderPresenter extends ConfirmationOrderContract.Presen
                 }
             }
         }
-        String cartId = sbId.substring(0, sbId.length() - 1);
+
+        sbId.deleteCharAt(sbId.length()-1);
+        String cartId = sbId.toString();
+//        if (i > 1){
+//            cartId = sbId.substring(0, sbId.length() - 1);
+//        } else {
+//            cartId = sbId.toString();
+//        }
         final int finalType = type;
         orderSubmitOrder(addressId, -1, array.toString(), finalType, flag, -1, orderNo, cartId, isCredited);
     }
@@ -205,6 +216,9 @@ public class ConfirmationOrderPresenter extends ConfirmationOrderContract.Presen
                             mView.setPayType(payType, type, mFlag, object.optInt("code"), object.optString("data"));
                         }else {
                             showToast(object.optString("desc"));
+                            if ("余额不足".equals(object.optString("desc"))){
+                                mView.setPayType(payType, 1, mFlag, 2, "");
+                            }
                         }
                     }
 

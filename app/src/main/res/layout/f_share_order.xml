@@ -1,9 +1,14 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
-    android:orientation="vertical"
     android:layout_width="match_parent"
     android:layout_height="match_parent">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical">
+
 
     <android.support.constraint.ConstraintLayout
         android:id="@+id/cl_yout"
@@ -91,7 +96,7 @@
         <TextView
             android:id="@+id/tv_collage_rule"
             style="@style/Tv12black"
-            android:layout_marginTop="@dimen/px10"
+            android:layout_marginTop="@dimen/px8"
             android:text="@string/collage_rule"
             android:textColor="@color/black_898989"
             app:layout_constraintLeft_toLeftOf="parent"
@@ -101,13 +106,16 @@
         <View
             android:id="@+id/view"
             style="@style/divider_1"
-            android:layout_marginTop="@dimen/px30"
+            android:layout_marginTop="@dimen/px20"
             app:layout_constraintTop_toBottomOf="@id/tv_collage_rule" />
 
         <TextView
             android:id="@+id/tv_name"
             style="@style/Tv15black"
             android:layout_margin="@dimen/px30"
+            android:paddingRight="@dimen/px160"
+            android:maxLines="2"
+            android:ellipsize="end"
             app:layout_constraintLeft_toLeftOf="parent"
             app:layout_constraintTop_toBottomOf="@id/view" />
 
@@ -189,4 +197,5 @@
         android:layout_height="0dp"
         android:layout_weight="1"/>
 
-</LinearLayout>
+    </LinearLayout>
+</ScrollView>

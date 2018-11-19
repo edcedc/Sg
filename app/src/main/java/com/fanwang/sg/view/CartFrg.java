@@ -8,6 +8,7 @@ import android.widget.ExpandableListView;
 import android.widget.TextView;
 
 import com.blankj.utilcode.util.LogUtils;
+import com.blankj.utilcode.util.StringUtils;
 import com.fanwang.sg.R;
 import com.fanwang.sg.adapter.CartAdapter;
 import com.fanwang.sg.base.BaseFragment;
@@ -119,7 +120,8 @@ public class CartFrg extends BaseFragment<CartPresenter, FCartBinding> implement
         });
         adapter.setChildClickListener(new CartAdapter.OnChildClickListener() {
             @Override
-            public void onChildClick(int groupPosition, int childPosition) {
+            public void onChildClick(boolean checked, int groupPosition, int childPosition) {
+
                 setPriceText();
             }
 
@@ -160,7 +162,7 @@ public class CartFrg extends BaseFragment<CartPresenter, FCartBinding> implement
         super.onSupportVisible();
         if (!isRefresh) {
             mB.refreshLayout.startRefresh();
-        }else {
+        } else {
             mPresenter.onRequest(pagerNumber = 1);
         }
     }
@@ -205,7 +207,7 @@ public class CartFrg extends BaseFragment<CartPresenter, FCartBinding> implement
 
     @Override
     public void onDelCartSuccess(List<DataBean> groups) {
-         mB.refreshLayout.startRefresh();
+        mB.refreshLayout.startRefresh();
 //        listBean.removeAll(groups);
 //        for (DataBean bean : listBean) {
 //            List<DataBean> prod = bean.getProd();
@@ -218,10 +220,9 @@ public class CartFrg extends BaseFragment<CartPresenter, FCartBinding> implement
     }
 
 
-
     @Override
     public void onAllSku(List<DataBean> listBean, String substring, int mStock, String image, String choice, double realPrice, final String pid, final int groupPosition, final int childPosition, final String id) {
-        if (classBottomFrg == null){
+        if (classBottomFrg == null) {
             classBottomFrg = new SetClassBottomFrg(listBean, image, choice, realPrice + "", pid);
         }
         classBottomFrg.show(getChildFragmentManager(), "dialog");
@@ -262,19 +263,18 @@ public class CartFrg extends BaseFragment<CartPresenter, FCartBinding> implement
                     BigDecimal num = new BigDecimal(bean1.getNum());
                     BigDecimal price = bean1.getRealPrice().multiply(num);
                     allPrice = allPrice.add(price);
-                    LogUtils.e(allPrice, bean1.getRealPrice() , num);
+                    LogUtils.e(allPrice, bean1.getRealPrice(), num);
                 }
             }
         }
         return allPrice;
     }
 
-    private double add(double value1,double value2){
+    private double add(double value1, double value2) {
         BigDecimal b1 = new BigDecimal(Double.toString(value1));
         BigDecimal b2 = new BigDecimal((int) value2);
         return b1.multiply(b2).doubleValue();
     }
-
 
 
     //设置价格
@@ -288,15 +288,23 @@ public class CartFrg extends BaseFragment<CartPresenter, FCartBinding> implement
     public void onClick(View view) {
         switch (view.getId()) {
             case R.id.tv_settlement://结算
+                List<DataBean> dataBeanList = new ArrayList<>();
+                List<DataBean> cBeanList = new ArrayList<>();
+                DataBean dataBean = null;
+                //循环外层
                 for (DataBean bean : listBean) {
-                    List<DataBean> crarChild = bean.getProd();
-                    for (DataBean bean1 : crarChild) {
-                        LogUtils.e("crarChild                 " + bean1.getId());
+                    for (DataBean bean1 : bean.getProd()) {//每一项
+                        if (bean1.isSelect()){//加入选中的
+                            dataBean = new DataBean();
+                            cBeanList = new ArrayList<>();
+                            cBeanList.add(bean1);
+                            dataBean.setProd(cBeanList);
+                            dataBeanList.add(dataBean);
+                        }
                     }
-                    LogUtils.e(bean.isSelect());
                 }
 //                UIHelper.startConfirmationOrderFrg(this, null, listBean, 1001, 0, null, 0);
-                UIHelper.startConfirmationOrderAct(null, listBean, 1001, 0, null, 0);
+                UIHelper.startConfirmationOrderAct(null, dataBeanList, 1001, 0, null, 0);
 
                 break;
             case R.id.tv_collection://移入收藏夹

@@ -125,7 +125,7 @@ public class RCloudTool {
      * 设置接收未读消息的监听器。
      *
      * @param listener          接收未读消息消息的监听器。
-     * @param conversationTypes 接收指定会话类型的未读消息数。
+     *  接收指定会话类型的未读消息数。
      */
     public void setOnReceiveUnreadCountChangedListener(RongIM.OnReceiveUnreadCountChangedListener listener) {
         RongIM.getInstance().setOnReceiveUnreadCountChangedListener(listener, Conversation.ConversationType.PRIVATE);
@@ -185,8 +185,8 @@ public class RCloudTool {
     /**
      * 收到消息的处理。
      *
-     * @param message 收到的消息实体。
-     * @param left    剩余未拉取消息数目。
+     * 收到的消息实体。
+     * 剩余未拉取消息数目。
      * @return 收到消息是否处理完成，true 表示走自已的处理方式，false 走融云默认处理方式。
      */
     private class MyReceiveMessageListener implements RongIMClient.OnReceiveMessageListener {
@@ -291,13 +291,28 @@ public class RCloudTool {
      * @param token
      */
     public void InitUser(Context context, String id, String name, String portraitUri, String token) {
-        final UserInfo info = new UserInfo(id, name, Uri.parse(portraitUri));
-        RongIM.getInstance().refreshUserInfoCache(info);
-        RongIM.getInstance().setCurrentUserInfo(info);
-        RongIM.getInstance().setMessageAttachedUserInfo(true);
-        RongContext.getInstance().setUserInfoAttachedState(true);
-        RCloudTool.getInstance().addUserInfo(info);
-        RCloudTool.getInstance().connect(token);
+        if (StringUtils.isEmpty(id))
+            id = "";
+        if (StringUtils.isEmpty(name))
+            name = "未设置";
+        if (StringUtils.isEmpty(token))
+            token = "";
+//        if (!StringUtils.isEmpty(portraitUri) && !StringUtils.isEmpty(id) && !StringUtils.isEmpty(name)) {
+        UserInfo info = null;
+        if (!StringUtils.isEmpty(portraitUri)) {
+            info = new UserInfo(id, name, Uri.parse(portraitUri));
+        } else {
+            info = new UserInfo(id, name, Uri.parse(""));
+        }
+            if (info != null) {
+                RongIM.getInstance().refreshUserInfoCache(info);
+                RongIM.getInstance().setCurrentUserInfo(info);
+                RongIM.getInstance().setMessageAttachedUserInfo(true);
+                RongContext.getInstance().setUserInfoAttachedState(true);
+                RCloudTool.getInstance().addUserInfo(info);
+                RCloudTool.getInstance().connect(token);
+            }
+//        }
     }
 
     public static void setUserInfoProvider(final String id, final String name, final String portraitUri) {
@@ -461,7 +476,7 @@ public class RCloudTool {
     /**
      * 根据会话类型，清除目标 Id 的消息未读状态，回调方式获取清除是否成功。
      *
-     * @param conversationType 会话类型。不支持传入 ConversationType.CHATROOM。
+     *  会话类型。不支持传入 ConversationType.CHATROOM。
      * @param targetId         目标 Id。根据不同的 conversationType，可能是用户 Id、讨论组 Id、群组 Id。
      * @param callback         清除是否成功的回调。
      */
@@ -472,7 +487,7 @@ public class RCloudTool {
     /**
      * 发送消息
      *
-     * @param conversationType PRIVATE 不知道为什么第一次发送成功我方不刷新页面
+     *  PRIVATE 不知道为什么第一次发送成功我方不刷新页面
      * @param userId
      * @param textMessage
      * @param callback
